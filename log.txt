@@ -1,0 +1,78 @@
+2023-11-06 22:17:58
+Columns with more than 2.5% missing values:
+Primary Genre: 98.64%
+Distributor: 100.00%
+IMDb Rating: 100.00%
+IMDB vs RT disparity: 100.00%
+Oscar Winners: 96.01%
+Oscar Detail: 96.01%
+Duplicate rows in the 'Film' column:
+                   Film  Year            Script Type Rotten Tomatoes  critics  ... Budget ($million)  Budget recovered   Budget recovered opening weekend  Release Date (US)
+681       That's My Boy  2012    original screenplay                       20  ...                70            82.46%                             19.22%       Jun 15, 2012
+682       That's My Boy  2012    original screenplay                       20  ...                70             82.46                             18.57%       Jun 15, 2012
+703         Big Miracle  2012             adaptation                       74  ...                40            61.80%                             19.40%        Feb 3, 2012
+704         Big Miracle  2012             adaptation                       74  ...                40              61.8                             20.00%        Feb 3, 2012
+709        Premium Rush  2012    original screenplay                       76  ...                35             88.81                             17.14%       Aug 24, 2012
+710        Premium Rush  2012    original screenplay                       76  ...                35            88.81%                             17.23%       Aug 24, 2012
+713          The Master  2012    original screenplay                       85  ...                32            88.31%                              2.30%       Sep 21, 2012
+714          The Master  2012    original screenplay                       85  ...                32             88.31                              3.13%       Sep 21, 2012
+1001  The Good Dinosaur  2015    original screenplay                       77  ...               200              166%                             19.58%       Nov 25, 2015
+1062      The Big Short  2015             adaptation                       87  ...                28           366.79%                             37.61%  December 11, 2015
+1135  The Good Dinosaur  2016    original screenplay                       77  ...               200              109%                             19.58%       Nov 25, 2015
+1168      The Big Short  2016  based on a true story                       88  ...                28              358%                             37.61%       Dec 23, 2015
+
+[12 rows x 25 columns]
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-06 22:19:04[0m
+Columns with more than 2.5% missing values:
+Primary Genre: 98.64%
+Distributor: 100.00%
+IMDb Rating: 100.00%
+IMDB vs RT disparity: 100.00%
+Oscar Winners: 96.01%
+Oscar Detail: 96.01%
+Duplicate rows in the 'Film' column:
+                   Film  Year            Script Type Rotten Tomatoes  critics  ... Budget ($million)  Budget recovered   Budget recovered opening weekend  Release Date (US)
+681       That's My Boy  2012    original screenplay                       20  ...                70            82.46%                             19.22%       Jun 15, 2012
+682       That's My Boy  2012    original screenplay                       20  ...                70             82.46                             18.57%       Jun 15, 2012
+703         Big Miracle  2012             adaptation                       74  ...                40            61.80%                             19.40%        Feb 3, 2012
+704         Big Miracle  2012             adaptation                       74  ...                40              61.8                             20.00%        Feb 3, 2012
+709        Premium Rush  2012    original screenplay                       76  ...                35             88.81                             17.14%       Aug 24, 2012
+710        Premium Rush  2012    original screenplay                       76  ...                35            88.81%                             17.23%       Aug 24, 2012
+713          The Master  2012    original screenplay                       85  ...                32            88.31%                              2.30%       Sep 21, 2012
+714          The Master  2012    original screenplay                       85  ...                32             88.31                              3.13%       Sep 21, 2012
+1001  The Good Dinosaur  2015    original screenplay                       77  ...               200              166%                             19.58%       Nov 25, 2015
+1062      The Big Short  2015             adaptation                       87  ...                28           366.79%                             37.61%  December 11, 2015
+1135  The Good Dinosaur  2016    original screenplay                       77  ...               200              109%                             19.58%       Nov 25, 2015
+1168      The Big Short  2016  based on a true story                       88  ...                28              358%                             37.61%       Dec 23, 2015
+
+[12 rows x 25 columns]
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-06 22:21:06[0m
+Columns with more than 2.5% missing values:
+Primary Genre: 98.64%
+Distributor: 100.00%
+IMDb Rating: 100.00%
+IMDB vs RT disparity: 100.00%
+Oscar Winners: 96.01%
+Oscar Detail: 96.01%
+Duplicate rows in the 'Film' column:
+                   Film  Year            Script Type Rotten Tomatoes  critics  ... Budget ($million)  Budget recovered   Budget recovered opening weekend  Release Date (US)
+681       That's My Boy  2012    original screenplay                       20  ...                70            82.46%                             19.22%       Jun 15, 2012
+682       That's My Boy  2012    original screenplay                       20  ...                70             82.46                             18.57%       Jun 15, 2012
+703         Big Miracle  2012             adaptation                       74  ...                40            61.80%                             19.40%        Feb 3, 2012
+704         Big Miracle  2012             adaptation                       74  ...                40              61.8                             20.00%        Feb 3, 2012
+709        Premium Rush  2012    original screenplay                       76  ...                35             88.81                             17.14%       Aug 24, 2012
+710        Premium Rush  2012    original screenplay                       76  ...                35            88.81%                             17.23%       Aug 24, 2012
+713          The Master  2012    original screenplay                       85  ...                32            88.31%                              2.30%       Sep 21, 2012
+714          The Master  2012    original screenplay                       85  ...                32             88.31                              3.13%       Sep 21, 2012
+1001  The Good Dinosaur  2015    original screenplay                       77  ...               200              166%                             19.58%       Nov 25, 2015
+1062      The Big Short  2015             adaptation                       87  ...                28           366.79%                             37.61%  December 11, 2015
+1135  The Good Dinosaur  2016    original screenplay                       77  ...               200              109%                             19.58%       Nov 25, 2015
+1168      The Big Short  2016  based on a true story                       88  ...                28              358%                             37.61%       Dec 23, 2015
+
+[12 rows x 25 columns]
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
