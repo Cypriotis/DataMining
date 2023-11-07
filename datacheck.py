@@ -22,15 +22,14 @@ reset_text_color = '\033[0m'
 # Print the formatted date and time in red
 log(f"{red_text}{formatted_datetime}{reset_text_color}")
 
+# Fill NaN values in "Oscar Winners" with "not an Oscar winner"
+df['Oscar Winners'] = df['Oscar Winners'].fillna("notyet")
 
 # Calculate the percentage of missing values in each column
 missing_percent = (df.isnull().sum() / len(df)) * 100
 
 # Columns with more than 2.5% missing values
 columns_with_missing_values = missing_percent[missing_percent > 2.5]
-
-# Fill NaN values in "Oscar Winners" with "not an Oscar winner"
-df['Oscar Winners'] = df['Oscar Winners'].fillna("Null")
 
 # Columns with more than 97% missing values
 columns_to_delete = missing_percent[missing_percent > 2.5].index
