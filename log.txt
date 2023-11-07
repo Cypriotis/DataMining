@@ -259,3 +259,386 @@ Duplicate rows in the 'Film' column:
 [12 rows x 26 columns]
 Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
 Excel file updated
+[91m2023-11-07 12:54:13[0m
+No columns with more than 2.5% missing values.
+No duplicates found in the 'Film' column.
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-07 13:01:34[0m
+[91m2023-11-07 13:02:14[0m
+No columns with more than 2.5% missing values.
+No duplicates found in the 'Film' column.
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-07 13:06:45[0m
+No columns with more than 2.5% missing values.
+No duplicates found in the 'Film' column.
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-07 13:07:13[0m
+No columns with more than 2.5% missing values.
+No duplicates found in the 'Film' column.
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-07 13:08:57[0m
+No columns with more than 2.5% missing values.
+No duplicates found in the 'Film' column.
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+[91m2023-11-07 13:09:28[0m
+No columns with more than 2.5% missing values.
+No duplicates found in the 'Film' column.
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+[91m2023-11-07 13:10:18[0m
+No columns with more than 2.5% missing values.
+No duplicates found in the 'Film' column.
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-07 13:53:45[0m
+No columns with more than 2.5% missing values.
+No duplicates found in the 'Film' column.
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+[91m2023-11-07 13:55:04[0m
+No columns with more than 2.5% missing values.
+No duplicates found in the 'Film' column.
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+[91m2023-11-07 13:59:39[0m
+No columns with more than 2.5% missing values.
+No duplicates found in the 'Film' column.
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-07 14:20:54[0m
+[91m2023-11-07 14:21:24[0m
+[91m2023-11-07 14:22:47[0m
+[91m2023-11-07 14:23:04[0m
+No columns with more than 2.5% missing values.
+No duplicates found in the 'Film' column.
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-07 14:34:24[0m
+No columns with more than 2.5% missing values.
+No duplicates found in the 'Film' column.
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-07 14:36:01[0m
+No columns with more than 2.5% missing values.
+No duplicates found in the 'Film' column.
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-07 14:38:56[0m
+No columns with more than 2.5% missing values.
+No duplicates found in the 'Film' column.
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-07 14:39:20[0m
+No columns with more than 2.5% missing values.
+No duplicates found in the 'Film' column.
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-07 14:51:48[0m
+No columns with more than 2.5% missing values.
+No duplicates found in the 'Film' column.
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-07 14:56:52[0m
+[91m2023-11-07 14:57:54[0m
+[91m2023-11-07 14:59:29[0m
+[91m2023-11-07 15:00:35[0m
+Columns with more than 2.5% missing values:
+Primary Genre: 98.64%
+Distributor: 100.00%
+IMDb Rating: 100.00%
+IMDB vs RT disparity: 100.00%
+Oscar Detail: 96.01%
+Duplicate rows in the 'Film' column:
+                   Film  Year            Script Type  ...  Budget recovered opening weekend  Release Date (US) Oscar Winners
+681       That's My Boy  2012    original screenplay  ...                            19.22%       Jun 15, 2012        notyet
+682       That's My Boy  2012    original screenplay  ...                            18.57%       Jun 15, 2012        notyet
+703         Big Miracle  2012             adaptation  ...                            19.40%        Feb 3, 2012        notyet
+704         Big Miracle  2012             adaptation  ...                            20.00%        Feb 3, 2012        notyet
+709        Premium Rush  2012    original screenplay  ...                            17.14%       Aug 24, 2012        notyet
+710        Premium Rush  2012    original screenplay  ...                            17.23%       Aug 24, 2012        notyet
+713          The Master  2012    original screenplay  ...                             2.30%       Sep 21, 2012        notyet
+714          The Master  2012    original screenplay  ...                             3.13%       Sep 21, 2012        notyet
+1001  The Good Dinosaur  2015    original screenplay  ...                            19.58%       Nov 25, 2015        notyet
+1062      The Big Short  2015             adaptation  ...                            37.61%  December 11, 2015        notyet
+1135  The Good Dinosaur  2016    original screenplay  ...                            19.58%       Nov 25, 2015        notyet
+1168      The Big Short  2016  based on a true story  ...                            37.61%       Dec 23, 2015  Oscar Winner
+
+[12 rows x 26 columns]
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-07 15:01:43[0m
+Columns with more than 2.5% missing values:
+Genre: 9.86%
+Duplicate rows in the 'Film' column:
+     Film  Year           Script Type Rotten Tomatoes  critics  ...  Budget recovered  Budget recovered opening weekend  Release Date (US) Oscar Winners
+4     NaN  2007                sequel                       14  ...           322.21%                            25.15%       Dec 25, 2007        notyet
+13    NaN  2007   original screenplay                       27  ...            99.00%                             6.72%       Sep 14, 2007        notyet
+90    NaN  2008   original screenplay                       96  ...           289.62%                            35.05%       Jun 27, 2008  Oscar Winner
+165   NaN  2008                sequel                       32  ...           195.34%                            28.86%       Jul 25, 2008        notyet
+184   NaN  2008   original screenplay                       65  ...            44.84%                            18.24%       Mar 28, 2008        notyet
+233   NaN  2008   original screenplay                       21  ...          1688.08%                           580.00%       Feb 29, 2008        notyet
+240   NaN  2009                sequel                       83  ...           373.60%                            31.12%       Jul 15, 2009        notyet
+248   NaN  2009            adaptation                       37  ...           248.73%                            56.73%        May 1, 2009        notyet
+249   NaN  2009   original screenplay                       22  ...           190.07%                            21.13%       Jul 24, 2009        notyet
+287   NaN  2009            adaptation                       16  ...            24.68%                             9.40%       Feb 27, 2009        notyet
+358   NaN  2009       remake / reboot                       57  ...           719.50%                           151.43%       Jan 16, 2009        notyet
+396   NaN  2010            adaptation                       47  ...           177.24%                            25.70%       Jun 11, 2010        notyet
+442   NaN  2010   original screenplay                       20  ...           221.37%                            34.86%       Apr 23, 2010        notyet
+449   NaN  2010            adaptation                       76  ...           320.63%                            66.00%       Apr 16, 2010        notyet
+463   NaN  2010       remake / reboot                       74  ...           346.63%                            42.08%       Aug 20, 2010        notyet
+477   NaN  2010                sequel                       63  ...           858.45%                           252.00%       Oct 15, 2010        notyet
+478   NaN  2010                sequel                       10  ...           680.75%                           112.65%       Oct 29, 2010        notyet
+521   NaN  2011                sequel                       87  ...           221.02%                            34.44%        Jun 3, 2011        notyet
+654   NaN  2012            adaptation                       73  ...           327.05%                            26.96%        Jul 3, 2012        notyet
+661   NaN  2012   original screenplay                       86  ...           285.59%                            29.72%        Nov 2, 2012        notyet
+715   NaN  2012   original screenplay                       63  ...           179.70%                            35.37%       Apr 27, 2012        notyet
+865   NaN  2014                sequel                       91  ...           374.06%                            45.41%       May 23, 2014        notyet
+901   NaN  2014  original screenplay                        60  ...           445.62%                            57.75%       Feb 28, 2014        notyet
+934   NaN  2014            adaptation                       68  ...           404.00%                            49.91%        Aug 8, 2014        notyet
+971   NaN  2015                sequel                       92  ...           454.76%                            37.01%       Jul 31, 2015        notyet
+978   NaN  2015            adaptation                       80  ...           395.21%                            44.02%       Jul 17, 2015        notyet
+1097  NaN  2016                sequel                       48  ...              306%                            36.95%       May 27, 2016        notyet
+1149  NaN  2016            adaptation                       25  ...               94%                            11.20%       Aug 19, 2016        notyet
+1324  NaN  2017    sequel, adaptation                       92  ...           502.95%                            66.87%        Jul 7, 2017        notyet
+
+[29 rows x 25 columns]
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-07 15:02:34[0m
+Columns with more than 2.5% missing values:
+Primary Genre: 98.72%
+Genre: 9.70%
+Distributor: 100.00%
+IMDb Rating: 100.00%
+IMDB vs RT disparity: 100.00%
+Oscar Detail: 96.01%
+Duplicate rows in the 'Film' column:
+                   Film  Year            Script Type  ...  Budget recovered opening weekend  Release Date (US) Oscar Winners
+4                   NaN  2007                 sequel  ...                            25.15%       Dec 25, 2007        notyet
+13                  NaN  2007    original screenplay  ...                             6.72%       Sep 14, 2007        notyet
+90                  NaN  2008    original screenplay  ...                            35.05%       Jun 27, 2008  Oscar Winner
+165                 NaN  2008                 sequel  ...                            28.86%       Jul 25, 2008        notyet
+184                 NaN  2008    original screenplay  ...                            18.24%       Mar 28, 2008        notyet
+233                 NaN  2008    original screenplay  ...                           580.00%       Feb 29, 2008        notyet
+240                 NaN  2009                 sequel  ...                            31.12%       Jul 15, 2009        notyet
+248                 NaN  2009             adaptation  ...                            56.73%        May 1, 2009        notyet
+249                 NaN  2009    original screenplay  ...                            21.13%       Jul 24, 2009        notyet
+287                 NaN  2009             adaptation  ...                             9.40%       Feb 27, 2009        notyet
+358                 NaN  2009        remake / reboot  ...                           151.43%       Jan 16, 2009        notyet
+396                 NaN  2010             adaptation  ...                            25.70%       Jun 11, 2010        notyet
+442                 NaN  2010    original screenplay  ...                            34.86%       Apr 23, 2010        notyet
+449                 NaN  2010             adaptation  ...                            66.00%       Apr 16, 2010        notyet
+463                 NaN  2010        remake / reboot  ...                            42.08%       Aug 20, 2010        notyet
+477                 NaN  2010                 sequel  ...                           252.00%       Oct 15, 2010        notyet
+478                 NaN  2010                 sequel  ...                           112.65%       Oct 29, 2010        notyet
+521                 NaN  2011                 sequel  ...                            34.44%        Jun 3, 2011        notyet
+655                 NaN  2012             adaptation  ...                            26.96%        Jul 3, 2012        notyet
+662                 NaN  2012    original screenplay  ...                            29.72%        Nov 2, 2012        notyet
+681       That's My Boy  2012    original screenplay  ...                            19.22%       Jun 15, 2012        notyet
+682       That's My Boy  2012    original screenplay  ...                            18.57%       Jun 15, 2012        notyet
+703         Big Miracle  2012             adaptation  ...                            19.40%        Feb 3, 2012        notyet
+704         Big Miracle  2012             adaptation  ...                            20.00%        Feb 3, 2012        notyet
+709        Premium Rush  2012    original screenplay  ...                            17.14%       Aug 24, 2012        notyet
+710        Premium Rush  2012    original screenplay  ...                            17.23%       Aug 24, 2012        notyet
+713          The Master  2012    original screenplay  ...                             2.30%       Sep 21, 2012        notyet
+714          The Master  2012    original screenplay  ...                             3.13%       Sep 21, 2012        notyet
+724                 NaN  2012    original screenplay  ...                            35.37%       Apr 27, 2012        notyet
+876                 NaN  2014                 sequel  ...                            45.41%       May 23, 2014        notyet
+912                 NaN  2014   original screenplay   ...                            57.75%       Feb 28, 2014        notyet
+945                 NaN  2014             adaptation  ...                            49.91%        Aug 8, 2014        notyet
+982                 NaN  2015                 sequel  ...                            37.01%       Jul 31, 2015        notyet
+989                 NaN  2015             adaptation  ...                            44.02%       Jul 17, 2015        notyet
+1001  The Good Dinosaur  2015    original screenplay  ...                            19.58%       Nov 25, 2015        notyet
+1062      The Big Short  2015             adaptation  ...                            37.61%  December 11, 2015        notyet
+1116                NaN  2016                 sequel  ...                            36.95%       May 27, 2016        notyet
+1135  The Good Dinosaur  2016    original screenplay  ...                            19.58%       Nov 25, 2015        notyet
+1168      The Big Short  2016  based on a true story  ...                            37.61%       Dec 23, 2015  Oscar Winner
+1170                NaN  2016             adaptation  ...                            11.20%       Aug 19, 2016        notyet
+1346                NaN  2017     sequel, adaptation  ...                            66.87%        Jul 7, 2017        notyet
+
+[41 rows x 25 columns]
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-07 15:05:36[0m
+No columns with more than 2.5% missing values.
+No duplicates found in the 'Film' column.
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-07 15:09:34[0m
+No columns with more than 2.5% missing values.
+No duplicates found in the 'Film' column.
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-07 15:13:01[0m
+Columns with more than 2.5% missing values:
+Primary Genre: 98.64%
+Distributor: 100.00%
+IMDb Rating: 100.00%
+IMDB vs RT disparity: 100.00%
+Oscar Detail: 96.12%
+Duplicate rows in the 'Film' column:
+                   Film  Year            Script Type Rotten Tomatoes  critics  ...  Budget recovered  Budget recovered opening weekend  Release Date (US) Oscar Winners
+681       That's My Boy  2012    original screenplay                       20  ...            82.46%                            19.22%       Jun 15, 2012        notyet
+682       That's My Boy  2012    original screenplay                       20  ...             82.46                            18.57%       Jun 15, 2012        notyet
+703         Big Miracle  2012             adaptation                       74  ...            61.80%                            19.40%        Feb 3, 2012        notyet
+704         Big Miracle  2012             adaptation                       74  ...              61.8                            20.00%        Feb 3, 2012        notyet
+709        Premium Rush  2012    original screenplay                       76  ...             88.81                            17.14%       Aug 24, 2012        notyet
+710        Premium Rush  2012    original screenplay                       76  ...            88.81%                            17.23%       Aug 24, 2012        notyet
+713          The Master  2012    original screenplay                       85  ...            88.31%                             2.30%       Sep 21, 2012        notyet
+714          The Master  2012    original screenplay                       85  ...             88.31                             3.13%       Sep 21, 2012        notyet
+1001  The Good Dinosaur  2015    original screenplay                       77  ...              166%                            19.58%       Nov 25, 2015        notyet
+1062      The Big Short  2015             adaptation                       87  ...           366.79%                            37.61%  December 11, 2015        notyet
+1135  The Good Dinosaur  2016    original screenplay                       77  ...              109%                            19.58%       Nov 25, 2015        notyet
+1168      The Big Short  2016  based on a true story                       88  ...              358%                            37.61%       Dec 23, 2015  Oscar Winner
+
+[12 rows x 26 columns]
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-07 15:15:17[0m
+No columns with more than 2.5% missing values.
+No duplicates found in the 'Film' column.
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-07 15:17:51[0m
+Columns with more than 2.5% missing values:
+Primary Genre: 98.64%
+Distributor: 100.00%
+IMDb Rating: 100.00%
+IMDB vs RT disparity: 100.00%
+Oscar Detail: 96.12%
+Duplicate rows in the 'Film' column:
+                   Film  Year            Script Type Rotten Tomatoes  critics  ...  Budget recovered  Budget recovered opening weekend  Release Date (US) Oscar Winners
+681       That's My Boy  2012    original screenplay                       20  ...            82.46%                            19.22%       Jun 15, 2012        notyet
+682       That's My Boy  2012    original screenplay                       20  ...             82.46                            18.57%       Jun 15, 2012        notyet
+703         Big Miracle  2012             adaptation                       74  ...            61.80%                            19.40%        Feb 3, 2012        notyet
+704         Big Miracle  2012             adaptation                       74  ...              61.8                            20.00%        Feb 3, 2012        notyet
+709        Premium Rush  2012    original screenplay                       76  ...             88.81                            17.14%       Aug 24, 2012        notyet
+710        Premium Rush  2012    original screenplay                       76  ...            88.81%                            17.23%       Aug 24, 2012        notyet
+713          The Master  2012    original screenplay                       85  ...            88.31%                             2.30%       Sep 21, 2012        notyet
+714          The Master  2012    original screenplay                       85  ...             88.31                             3.13%       Sep 21, 2012        notyet
+1001  The Good Dinosaur  2015    original screenplay                       77  ...              166%                            19.58%       Nov 25, 2015        notyet
+1062      The Big Short  2015             adaptation                       87  ...           366.79%                            37.61%  December 11, 2015        notyet
+1135  The Good Dinosaur  2016    original screenplay                       77  ...              109%                            19.58%       Nov 25, 2015        notyet
+1168      The Big Short  2016  based on a true story                       88  ...              358%                            37.61%       Dec 23, 2015  Oscar Winner
+
+[12 rows x 26 columns]
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-07 15:20:19[0m
+No columns with more than 2.5% missing values.
+No duplicates found in the 'Film' column.
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-07 15:21:01[0m
+Columns with more than 2.5% missing values:
+Primary Genre: 98.64%
+Distributor: 100.00%
+IMDb Rating: 100.00%
+IMDB vs RT disparity: 100.00%
+Oscar Detail: 96.12%
+Duplicate rows in the 'Film' column:
+                   Film  Year            Script Type Rotten Tomatoes  critics  ...  Budget recovered  Budget recovered opening weekend  Release Date (US) Oscar Winners
+681       That's My Boy  2012    original screenplay                       20  ...            82.46%                            19.22%       Jun 15, 2012        notyet
+682       That's My Boy  2012    original screenplay                       20  ...             82.46                            18.57%       Jun 15, 2012        notyet
+703         Big Miracle  2012             adaptation                       74  ...            61.80%                            19.40%        Feb 3, 2012        notyet
+704         Big Miracle  2012             adaptation                       74  ...              61.8                            20.00%        Feb 3, 2012        notyet
+709        Premium Rush  2012    original screenplay                       76  ...             88.81                            17.14%       Aug 24, 2012        notyet
+710        Premium Rush  2012    original screenplay                       76  ...            88.81%                            17.23%       Aug 24, 2012        notyet
+713          The Master  2012    original screenplay                       85  ...            88.31%                             2.30%       Sep 21, 2012        notyet
+714          The Master  2012    original screenplay                       85  ...             88.31                             3.13%       Sep 21, 2012        notyet
+1001  The Good Dinosaur  2015    original screenplay                       77  ...              166%                            19.58%       Nov 25, 2015        notyet
+1062      The Big Short  2015             adaptation                       87  ...           366.79%                            37.61%  December 11, 2015        notyet
+1135  The Good Dinosaur  2016    original screenplay                       77  ...              109%                            19.58%       Nov 25, 2015        notyet
+1168      The Big Short  2016  based on a true story                       88  ...              358%                            37.61%       Dec 23, 2015  Oscar Winner
+
+[12 rows x 26 columns]
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+[91m2023-11-07 16:08:59[0m
+[91m2023-11-07 16:10:36[0m
+Columns with more than 2.5% missing values:
+Primary Genre: 98.64%
+Distributor: 100.00%
+IMDb Rating: 100.00%
+IMDB vs RT disparity: 100.00%
+Oscar Detail: 96.01%
+Duplicate rows in the 'Film' column:
+                   Film  Year            Script Type Rotten Tomatoes  critics  ...  Budget recovered  Budget recovered opening weekend  Release Date (US) Oscar Winners
+681       That's My Boy  2012    original screenplay                       20  ...            82.46%                            19.22%       Jun 15, 2012           nan
+682       That's My Boy  2012    original screenplay                       20  ...             82.46                            18.57%       Jun 15, 2012           nan
+703         Big Miracle  2012             adaptation                       74  ...            61.80%                            19.40%        Feb 3, 2012           nan
+704         Big Miracle  2012             adaptation                       74  ...              61.8                            20.00%        Feb 3, 2012           nan
+709        Premium Rush  2012    original screenplay                       76  ...             88.81                            17.14%       Aug 24, 2012           nan
+710        Premium Rush  2012    original screenplay                       76  ...            88.81%                            17.23%       Aug 24, 2012           nan
+713          The Master  2012    original screenplay                       85  ...            88.31%                             2.30%       Sep 21, 2012           nan
+714          The Master  2012    original screenplay                       85  ...             88.31                             3.13%       Sep 21, 2012           nan
+1001  The Good Dinosaur  2015    original screenplay                       77  ...              166%                            19.58%       Nov 25, 2015           nan
+1062      The Big Short  2015             adaptation                       87  ...           366.79%                            37.61%  December 11, 2015           nan
+1135  The Good Dinosaur  2016    original screenplay                       77  ...              109%                            19.58%       Nov 25, 2015           nan
+1168      The Big Short  2016  based on a true story                       88  ...              358%                            37.61%       Dec 23, 2015  Oscar Winner
+
+[12 rows x 26 columns]
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-07 16:16:03[0m
+Columns with more than 2.5% missing values:
+Genre: 9.86%
+Duplicate rows in the 'Film' column:
+     Film  Year           Script Type  Rotten Tomatoes  critics  Metacritic  critics  ...  Budget ($million)   Budget recovered   Budget recovered opening weekend  Release Date (US)  Oscar Winners
+4     NaN  2007                sequel                      14.0                 29.0  ...               40.0            322.21%                             25.15%       Dec 25, 2007            nan
+13    NaN  2007   original screenplay                      27.0                 33.0  ...               75.0             99.00%                              6.72%       Sep 14, 2007            nan
+90    NaN  2008   original screenplay                      96.0                 94.0  ...              180.0            289.62%                             35.05%       Jun 27, 2008   Oscar Winner
+165   NaN  2008                sequel                      32.0                 47.0  ...               35.0            195.34%                             28.86%       Jul 25, 2008            nan
+184   NaN  2008   original screenplay                      65.0                 61.0  ...               25.0             44.84%                             18.24%       Mar 28, 2008            nan
+233   NaN  2008   original screenplay                      21.0                 47.0  ...                2.6           1688.08%                            580.00%       Feb 29, 2008            nan
+240   NaN  2009                sequel                      83.0                 78.0  ...              250.0            373.60%                             31.12%       Jul 15, 2009            nan
+248   NaN  2009            adaptation                      37.0                 40.0  ...              150.0            248.73%                             56.73%        May 1, 2009            nan
+249   NaN  2009   original screenplay                      22.0                 41.0  ...              150.0            190.07%                             21.13%       Jul 24, 2009            nan
+287   NaN  2009            adaptation                      16.0                 17.0  ...               50.0             24.68%                              9.40%       Feb 27, 2009            nan
+358   NaN  2009       remake / reboot                      57.0                 51.0  ...               14.0            719.50%                            151.43%       Jan 16, 2009            nan
+396   NaN  2010            adaptation                      47.0                 47.0  ...              100.0            177.24%                             25.70%       Jun 11, 2010            nan
+442   NaN  2010   original screenplay                      20.0                 34.0  ...               35.0            221.37%                             34.86%       Apr 23, 2010            nan
+449   NaN  2010            adaptation                      76.0                 66.0  ...               30.0            320.63%                             66.00%       Apr 16, 2010            nan
+463   NaN  2010       remake / reboot                      74.0                 53.0  ...               24.0            346.63%                             42.08%       Aug 20, 2010            nan
+477   NaN  2010                sequel                      63.0                 56.0  ...               20.0            858.45%                            252.00%       Oct 15, 2010            nan
+478   NaN  2010                sequel                      10.0                 24.0  ...               20.0            680.75%                            112.65%       Oct 29, 2010            nan
+521   NaN  2011                sequel                      87.0                 65.0  ...              160.0            221.02%                             34.44%        Jun 3, 2011            nan
+654   NaN  2012            adaptation                      73.0                 66.0  ...              230.0            327.05%                             26.96%        Jul 3, 2012            nan
+661   NaN  2012   original screenplay                      86.0                 72.0  ...              165.0            285.59%                             29.72%        Nov 2, 2012            nan
+715   NaN  2012   original screenplay                      63.0                 62.0  ...               30.0            179.70%                             35.37%       Apr 27, 2012            nan
+865   NaN  2014                sequel                      91.0                 74.0  ...              200.0            374.06%                             45.41%       May 23, 2014            nan
+901   NaN  2014  original screenplay                       60.0                 56.0  ...               50.0            445.62%                             57.75%       Feb 28, 2014            nan
+934   NaN  2014            adaptation                      68.0                 55.0  ...               22.0            404.00%                             49.91%        Aug 8, 2014            nan
+971   NaN  2015                sequel                      92.0                 75.0  ...              150.0            454.76%                             37.01%       Jul 31, 2015            nan
+978   NaN  2015            adaptation                      80.0                 64.0  ...              130.0            395.21%                             44.02%       Jul 17, 2015            nan
+1097  NaN  2016                sequel                      48.0                 52.0  ...              178.0               306%                             36.95%       May 27, 2016            nan
+1149  NaN  2016            adaptation                      25.0                 38.0  ...              100.0                94%                             11.20%       Aug 19, 2016            nan
+1324  NaN  2017    sequel, adaptation                      92.0                 73.0  ...              175.0            502.95%                             66.87%        Jul 7, 2017            nan
+
+[29 rows x 25 columns]
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+[91m2023-11-07 16:20:52[0m
+Columns with more than 2.5% missing values:
+Primary Genre: 98.64%
+Distributor: 100.00%
+IMDb Rating: 100.00%
+IMDB vs RT disparity: 100.00%
+Oscar Detail: 96.01%
+Duplicate rows in the 'Film' column:
+                   Film  Year            Script Type Rotten Tomatoes  critics  ...  Budget recovered  Budget recovered opening weekend  Release Date (US) Oscar Winners
+681       That's My Boy  2012    original screenplay                       20  ...            82.46%                            19.22%       Jun 15, 2012           nan
+682       That's My Boy  2012    original screenplay                       20  ...             82.46                            18.57%       Jun 15, 2012           nan
+703         Big Miracle  2012             adaptation                       74  ...            61.80%                            19.40%        Feb 3, 2012           nan
+704         Big Miracle  2012             adaptation                       74  ...              61.8                            20.00%        Feb 3, 2012           nan
+709        Premium Rush  2012    original screenplay                       76  ...             88.81                            17.14%       Aug 24, 2012           nan
+710        Premium Rush  2012    original screenplay                       76  ...            88.81%                            17.23%       Aug 24, 2012           nan
+713          The Master  2012    original screenplay                       85  ...            88.31%                             2.30%       Sep 21, 2012           nan
+714          The Master  2012    original screenplay                       85  ...             88.31                             3.13%       Sep 21, 2012           nan
+1001  The Good Dinosaur  2015    original screenplay                       77  ...              166%                            19.58%       Nov 25, 2015           nan
+1062      The Big Short  2015             adaptation                       87  ...           366.79%                            37.61%  December 11, 2015           nan
+1135  The Good Dinosaur  2016    original screenplay                       77  ...              109%                            19.58%       Nov 25, 2015           nan
+1168      The Big Short  2016  based on a true story                       88  ...              358%                            37.61%       Dec 23, 2015  Oscar Winner
+
+[12 rows x 26 columns]
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
