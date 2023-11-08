@@ -1,0 +1,610 @@
+[91m2023-11-07 17:28:37[0m
+No columns with more than 2.5% missing values.
+No duplicates found in the 'Film' column.
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-07 17:52:37[0m
+[91m2023-11-07 17:53:17[0m
+No columns with more than 2.5% missing values.
+[91m2023-11-07 17:55:01[0m
+Columns with more than 2.5% missing values:
+Primary Genre: 98.64%
+Distributor: 100.00%
+IMDb Rating: 100.00%
+IMDB vs RT disparity: 100.00%
+Oscar Detail: 96.01%
+[91m2023-11-07 17:56:44[0m
+Columns with more than 2.5% missing values:
+Primary Genre: 98.64%
+Distributor: 100.00%
+IMDb Rating: 100.00%
+IMDB vs RT disparity: 100.00%
+Oscar Detail: 96.01%
+Duplicate rows in the 'Film' column:
+                   Film  Year            Script Type  ...  Release Date (US) Oscar Winners                  Oscar Detail
+681       That's My Boy  2012    original screenplay  ...       Jun 15, 2012           NaN                           NaN
+682       That's My Boy  2012    original screenplay  ...       Jun 15, 2012           NaN                           NaN
+703         Big Miracle  2012             adaptation  ...        Feb 3, 2012           NaN                           NaN
+704         Big Miracle  2012             adaptation  ...        Feb 3, 2012           NaN                           NaN
+709        Premium Rush  2012    original screenplay  ...       Aug 24, 2012           NaN                           NaN
+710        Premium Rush  2012    original screenplay  ...       Aug 24, 2012           NaN                           NaN
+713          The Master  2012    original screenplay  ...       Sep 21, 2012           NaN                           NaN
+714          The Master  2012    original screenplay  ...       Sep 21, 2012           NaN                           NaN
+1001  The Good Dinosaur  2015    original screenplay  ...       Nov 25, 2015           NaN                           NaN
+1062      The Big Short  2015             adaptation  ...  December 11, 2015           NaN                           NaN
+1135  The Good Dinosaur  2016    original screenplay  ...       Nov 25, 2015           NaN                           NaN
+1168      The Big Short  2016  based on a true story  ...       Dec 23, 2015  Oscar Winner  Writing (adapted screenplay)
+
+[12 rows x 31 columns]
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+[91m2023-11-07 17:57:36[0m
+Columns with more than 2.5% missing values:
+Primary Genre: 98.64%
+Distributor: 100.00%
+IMDb Rating: 100.00%
+IMDB vs RT disparity: 100.00%
+Oscar Detail: 96.01%
+Duplicate rows in the 'Film' column:
+                   Film  Year            Script Type  ...  Release Date (US) Oscar Winners                  Oscar Detail
+681       That's My Boy  2012    original screenplay  ...       Jun 15, 2012           NaN                           NaN
+682       That's My Boy  2012    original screenplay  ...       Jun 15, 2012           NaN                           NaN
+703         Big Miracle  2012             adaptation  ...        Feb 3, 2012           NaN                           NaN
+704         Big Miracle  2012             adaptation  ...        Feb 3, 2012           NaN                           NaN
+709        Premium Rush  2012    original screenplay  ...       Aug 24, 2012           NaN                           NaN
+710        Premium Rush  2012    original screenplay  ...       Aug 24, 2012           NaN                           NaN
+713          The Master  2012    original screenplay  ...       Sep 21, 2012           NaN                           NaN
+714          The Master  2012    original screenplay  ...       Sep 21, 2012           NaN                           NaN
+1001  The Good Dinosaur  2015    original screenplay  ...       Nov 25, 2015           NaN                           NaN
+1062      The Big Short  2015             adaptation  ...  December 11, 2015           NaN                           NaN
+1135  The Good Dinosaur  2016    original screenplay  ...       Nov 25, 2015           NaN                           NaN
+1168      The Big Short  2016  based on a true story  ...       Dec 23, 2015  Oscar Winner  Writing (adapted screenplay)
+
+[12 rows x 31 columns]
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-07 17:59:28[0m
+[91m2023-11-07 17:59:48[0m
+Columns with more than 2.5% missing values:
+Primary Genre: 98.56%
+Distributor: 100.00%
+IMDb Rating: 100.00%
+IMDB vs RT disparity: 100.00%
+Oscar Detail: 96.05%
+Duplicate rows in the 'Film' column:
+                   Film  Year            Script Type  ...  Release Date (US) Oscar Winners                  Oscar Detail
+681       That's My Boy  2012    original screenplay  ...       Jun 15, 2012           NaN                           NaN
+682       That's My Boy  2012    original screenplay  ...       Jun 15, 2012           NaN                           NaN
+703         Big Miracle  2012             adaptation  ...        Feb 3, 2012           NaN                           NaN
+704         Big Miracle  2012             adaptation  ...        Feb 3, 2012           NaN                           NaN
+709        Premium Rush  2012    original screenplay  ...       Aug 24, 2012           NaN                           NaN
+710        Premium Rush  2012    original screenplay  ...       Aug 24, 2012           NaN                           NaN
+713          The Master  2012    original screenplay  ...       Sep 21, 2012           NaN                           NaN
+714          The Master  2012    original screenplay  ...       Sep 21, 2012           NaN                           NaN
+1001  The Good Dinosaur  2015    original screenplay  ...       Nov 25, 2015           NaN                           NaN
+1062      The Big Short  2015             adaptation  ...  December 11, 2015           NaN                           NaN
+1135  The Good Dinosaur  2016    original screenplay  ...       Nov 25, 2015           NaN                           NaN
+1168      The Big Short  2016  based on a true story  ...       Dec 23, 2015  Oscar Winner  Writing (adapted screenplay)
+
+[12 rows x 31 columns]
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-07 18:25:05[0m
+Columns with more than 2.5% missing values:
+Primary Genre: 98.56%
+Distributor: 100.00%
+IMDb Rating: 100.00%
+IMDB vs RT disparity: 100.00%
+Oscar Winners: 96.05%
+Oscar Detail: 96.05%
+Duplicate rows in the 'Film' column:
+                   Film  Year            Script Type  ...  Release Date (US) Oscar Winners                  Oscar Detail
+681       That's My Boy  2012    original screenplay  ...       Jun 15, 2012           NaN                           NaN
+682       That's My Boy  2012    original screenplay  ...       Jun 15, 2012           NaN                           NaN
+703         Big Miracle  2012             adaptation  ...        Feb 3, 2012           NaN                           NaN
+704         Big Miracle  2012             adaptation  ...        Feb 3, 2012           NaN                           NaN
+709        Premium Rush  2012    original screenplay  ...       Aug 24, 2012           NaN                           NaN
+710        Premium Rush  2012    original screenplay  ...       Aug 24, 2012           NaN                           NaN
+713          The Master  2012    original screenplay  ...       Sep 21, 2012           NaN                           NaN
+714          The Master  2012    original screenplay  ...       Sep 21, 2012           NaN                           NaN
+1001  The Good Dinosaur  2015    original screenplay  ...       Nov 25, 2015           NaN                           NaN
+1062      The Big Short  2015             adaptation  ...  December 11, 2015           NaN                           NaN
+1135  The Good Dinosaur  2016    original screenplay  ...       Nov 25, 2015           NaN                           NaN
+1168      The Big Short  2016  based on a true story  ...       Dec 23, 2015  Oscar Winner  Writing (adapted screenplay)
+
+[12 rows x 31 columns]
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-07 18:26:00[0m
+[91m2023-11-07 18:26:21[0m
+[91m2023-11-07 18:26:51[0m
+Columns with more than 2.5% missing values:
+Primary Genre: 98.64%
+Distributor: 100.00%
+IMDb Rating: 100.00%
+IMDB vs RT disparity: 100.00%
+Oscar Detail: 96.01%
+Duplicate rows in the 'Film' column:
+                   Film  Year            Script Type  ...  Release Date (US) Oscar Winners                  Oscar Detail
+681       That's My Boy  2012    original screenplay  ...       Jun 15, 2012           NaN                           NaN
+682       That's My Boy  2012    original screenplay  ...       Jun 15, 2012           NaN                           NaN
+703         Big Miracle  2012             adaptation  ...        Feb 3, 2012           NaN                           NaN
+704         Big Miracle  2012             adaptation  ...        Feb 3, 2012           NaN                           NaN
+709        Premium Rush  2012    original screenplay  ...       Aug 24, 2012           NaN                           NaN
+710        Premium Rush  2012    original screenplay  ...       Aug 24, 2012           NaN                           NaN
+713          The Master  2012    original screenplay  ...       Sep 21, 2012           NaN                           NaN
+714          The Master  2012    original screenplay  ...       Sep 21, 2012           NaN                           NaN
+1001  The Good Dinosaur  2015    original screenplay  ...       Nov 25, 2015           NaN                           NaN
+1062      The Big Short  2015             adaptation  ...  December 11, 2015           NaN                           NaN
+1135  The Good Dinosaur  2016    original screenplay  ...       Nov 25, 2015           NaN                           NaN
+1168      The Big Short  2016  based on a true story  ...       Dec 23, 2015  Oscar Winner  Writing (adapted screenplay)
+
+[12 rows x 31 columns]
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-07 19:12:11[0m
+[91m2023-11-07 19:12:26[0m
+Columns with more than 2.5% missing values:
+Primary Genre: 98.64%
+Distributor: 100.00%
+IMDb Rating: 100.00%
+IMDB vs RT disparity: 100.00%
+Oscar Detail: 96.01%
+Duplicate rows in the 'Film' column:
+                   Film  Year            Script Type  ...  Release Date (US) Oscar Winners                  Oscar Detail
+681       That's My Boy  2012    original screenplay  ...       Jun 15, 2012           NaN                           NaN
+682       That's My Boy  2012    original screenplay  ...       Jun 15, 2012           NaN                           NaN
+703         Big Miracle  2012             adaptation  ...        Feb 3, 2012           NaN                           NaN
+704         Big Miracle  2012             adaptation  ...        Feb 3, 2012           NaN                           NaN
+709        Premium Rush  2012    original screenplay  ...       Aug 24, 2012           NaN                           NaN
+710        Premium Rush  2012    original screenplay  ...       Aug 24, 2012           NaN                           NaN
+713          The Master  2012    original screenplay  ...       Sep 21, 2012           NaN                           NaN
+714          The Master  2012    original screenplay  ...       Sep 21, 2012           NaN                           NaN
+1001  The Good Dinosaur  2015    original screenplay  ...       Nov 25, 2015           NaN                           NaN
+1062      The Big Short  2015             adaptation  ...  December 11, 2015           NaN                           NaN
+1135  The Good Dinosaur  2016    original screenplay  ...       Nov 25, 2015           NaN                           NaN
+1168      The Big Short  2016  based on a true story  ...       Dec 23, 2015  Oscar Winner  Writing (adapted screenplay)
+
+[12 rows x 31 columns]
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+[91m2023-11-07 19:13:23[0m
+[91m2023-11-07 19:14:24[0m
+Columns with more than 2.5% missing values:
+Primary Genre: 98.64%
+Distributor: 100.00%
+IMDb Rating: 100.00%
+IMDB vs RT disparity: 100.00%
+Oscar Detail: 96.01%
+Duplicate rows in the 'Film' column:
+                   Film  Year            Script Type  ...  Release Date (US) Oscar Winners                  Oscar Detail
+681       That's My Boy  2012    original screenplay  ...       Jun 15, 2012           NaN                           NaN
+682       That's My Boy  2012    original screenplay  ...       Jun 15, 2012           NaN                           NaN
+703         Big Miracle  2012             adaptation  ...        Feb 3, 2012           NaN                           NaN
+704         Big Miracle  2012             adaptation  ...        Feb 3, 2012           NaN                           NaN
+709        Premium Rush  2012    original screenplay  ...       Aug 24, 2012           NaN                           NaN
+710        Premium Rush  2012    original screenplay  ...       Aug 24, 2012           NaN                           NaN
+713          The Master  2012    original screenplay  ...       Sep 21, 2012           NaN                           NaN
+714          The Master  2012    original screenplay  ...       Sep 21, 2012           NaN                           NaN
+1001  The Good Dinosaur  2015    original screenplay  ...       Nov 25, 2015           NaN                           NaN
+1062      The Big Short  2015             adaptation  ...  December 11, 2015           NaN                           NaN
+1135  The Good Dinosaur  2016    original screenplay  ...       Nov 25, 2015           NaN                           NaN
+1168      The Big Short  2016  based on a true story  ...       Dec 23, 2015  Oscar Winner  Writing (adapted screenplay)
+
+[12 rows x 31 columns]
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+[91m2023-11-07 19:15:41[0m
+Columns with more than 2.5% missing values:
+Primary Genre: 98.64%
+Distributor: 100.00%
+IMDb Rating: 100.00%
+IMDB vs RT disparity: 100.00%
+Oscar Detail: 96.01%
+Duplicate rows in the 'Film' column:
+                   Film  Year            Script Type  ...  Release Date (US) Oscar Winners                  Oscar Detail
+681       That's My Boy  2012    original screenplay  ...       Jun 15, 2012           NaN                           NaN
+682       That's My Boy  2012    original screenplay  ...       Jun 15, 2012           NaN                           NaN
+703         Big Miracle  2012             adaptation  ...        Feb 3, 2012           NaN                           NaN
+704         Big Miracle  2012             adaptation  ...        Feb 3, 2012           NaN                           NaN
+709        Premium Rush  2012    original screenplay  ...       Aug 24, 2012           NaN                           NaN
+710        Premium Rush  2012    original screenplay  ...       Aug 24, 2012           NaN                           NaN
+713          The Master  2012    original screenplay  ...       Sep 21, 2012           NaN                           NaN
+714          The Master  2012    original screenplay  ...       Sep 21, 2012           NaN                           NaN
+1001  The Good Dinosaur  2015    original screenplay  ...       Nov 25, 2015           NaN                           NaN
+1062      The Big Short  2015             adaptation  ...  December 11, 2015           NaN                           NaN
+1135  The Good Dinosaur  2016    original screenplay  ...       Nov 25, 2015           NaN                           NaN
+1168      The Big Short  2016  based on a true story  ...       Dec 23, 2015  Oscar Winner  Writing (adapted screenplay)
+
+[12 rows x 31 columns]
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-07 19:17:19[0m
+[91m2023-11-07 19:18:32[0m
+Columns with more than 2.5% missing values:
+Primary Genre: 98.64%
+Distributor: 100.00%
+IMDb Rating: 100.00%
+IMDB vs RT disparity: 100.00%
+Oscar Detail: 96.01%
+Duplicate rows in the 'Film' column:
+                   Film  Year            Script Type  ...  Release Date (US) Oscar Winners                  Oscar Detail
+681       That's My Boy  2012    original screenplay  ...       Jun 15, 2012           NaN                           NaN
+682       That's My Boy  2012    original screenplay  ...       Jun 15, 2012           NaN                           NaN
+703         Big Miracle  2012             adaptation  ...        Feb 3, 2012           NaN                           NaN
+704         Big Miracle  2012             adaptation  ...        Feb 3, 2012           NaN                           NaN
+709        Premium Rush  2012    original screenplay  ...       Aug 24, 2012           NaN                           NaN
+710        Premium Rush  2012    original screenplay  ...       Aug 24, 2012           NaN                           NaN
+713          The Master  2012    original screenplay  ...       Sep 21, 2012           NaN                           NaN
+714          The Master  2012    original screenplay  ...       Sep 21, 2012           NaN                           NaN
+1001  The Good Dinosaur  2015    original screenplay  ...       Nov 25, 2015           NaN                           NaN
+1062      The Big Short  2015             adaptation  ...  December 11, 2015           NaN                           NaN
+1135  The Good Dinosaur  2016    original screenplay  ...       Nov 25, 2015           NaN                           NaN
+1168      The Big Short  2016  based on a true story  ...       Dec 23, 2015  Oscar Winner  Writing (adapted screenplay)
+
+[12 rows x 31 columns]
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-07 21:07:42[0m
+Columns with more than 2.5% missing values:
+Primary Genre: 98.64%
+Distributor: 100.00%
+IMDb Rating: 100.00%
+IMDB vs RT disparity: 100.00%
+Oscar Detail: 96.01%
+Duplicate rows in the 'Film' column:
+                   Film  Year            Script Type  ...  Release Date (US) Oscar Winners                  Oscar Detail
+681       That's My Boy  2012    original screenplay  ...       Jun 15, 2012           NaN                           NaN
+682       That's My Boy  2012    original screenplay  ...       Jun 15, 2012           NaN                           NaN
+703         Big Miracle  2012             adaptation  ...        Feb 3, 2012           NaN                           NaN
+704         Big Miracle  2012             adaptation  ...        Feb 3, 2012           NaN                           NaN
+709        Premium Rush  2012    original screenplay  ...       Aug 24, 2012           NaN                           NaN
+710        Premium Rush  2012    original screenplay  ...       Aug 24, 2012           NaN                           NaN
+713          The Master  2012    original screenplay  ...       Sep 21, 2012           NaN                           NaN
+714          The Master  2012    original screenplay  ...       Sep 21, 2012           NaN                           NaN
+1001  The Good Dinosaur  2015    original screenplay  ...       Nov 25, 2015           NaN                           NaN
+1062      The Big Short  2015             adaptation  ...  December 11, 2015           NaN                           NaN
+1135  The Good Dinosaur  2016    original screenplay  ...       Nov 25, 2015           NaN                           NaN
+1168      The Big Short  2016  based on a true story  ...       Dec 23, 2015  Oscar Winner  Writing (adapted screenplay)
+
+[12 rows x 31 columns]
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-07 21:34:09[0m
+Columns with more than 2.5% missing values:
+Primary Genre: 98.64%
+Distributor: 100.00%
+IMDb Rating: 100.00%
+IMDB vs RT disparity: 100.00%
+Oscar Detail: 96.01%
+Duplicate rows in the 'Film' column:
+                   Film  Year            Script Type  ...  Release Date (US) Oscar Winners                  Oscar Detail
+681       That's My Boy  2012    original screenplay  ...       Jun 15, 2012           NaN                           NaN
+682       That's My Boy  2012    original screenplay  ...       Jun 15, 2012           NaN                           NaN
+703         Big Miracle  2012             adaptation  ...        Feb 3, 2012           NaN                           NaN
+704         Big Miracle  2012             adaptation  ...        Feb 3, 2012           NaN                           NaN
+709        Premium Rush  2012    original screenplay  ...       Aug 24, 2012           NaN                           NaN
+710        Premium Rush  2012    original screenplay  ...       Aug 24, 2012           NaN                           NaN
+713          The Master  2012    original screenplay  ...       Sep 21, 2012           NaN                           NaN
+714          The Master  2012    original screenplay  ...       Sep 21, 2012           NaN                           NaN
+1001  The Good Dinosaur  2015    original screenplay  ...       Nov 25, 2015           NaN                           NaN
+1062      The Big Short  2015             adaptation  ...  December 11, 2015           NaN                           NaN
+1135  The Good Dinosaur  2016    original screenplay  ...       Nov 25, 2015           NaN                           NaN
+1168      The Big Short  2016  based on a true story  ...       Dec 23, 2015  Oscar Winner  Writing (adapted screenplay)
+
+[12 rows x 31 columns]
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-07 21:45:44[0m
+Columns with more than 2.5% missing values:
+Primary Genre: 98.64%
+Distributor: 100.00%
+IMDb Rating: 100.00%
+IMDB vs RT disparity: 100.00%
+Oscar Detail: 96.01%
+Duplicate rows in the 'Film' column:
+                   Film  Year            Script Type  ...  Release Date (US) Oscar Winners                  Oscar Detail
+681       That's My Boy  2012    original screenplay  ...       Jun 15, 2012           NaN                           NaN
+682       That's My Boy  2012    original screenplay  ...       Jun 15, 2012           NaN                           NaN
+703         Big Miracle  2012             adaptation  ...        Feb 3, 2012           NaN                           NaN
+704         Big Miracle  2012             adaptation  ...        Feb 3, 2012           NaN                           NaN
+709        Premium Rush  2012    original screenplay  ...       Aug 24, 2012           NaN                           NaN
+710        Premium Rush  2012    original screenplay  ...       Aug 24, 2012           NaN                           NaN
+713          The Master  2012    original screenplay  ...       Sep 21, 2012           NaN                           NaN
+714          The Master  2012    original screenplay  ...       Sep 21, 2012           NaN                           NaN
+1001  The Good Dinosaur  2015    original screenplay  ...       Nov 25, 2015           NaN                           NaN
+1062      The Big Short  2015             adaptation  ...  December 11, 2015           NaN                           NaN
+1135  The Good Dinosaur  2016    original screenplay  ...       Nov 25, 2015           NaN                           NaN
+1168      The Big Short  2016  based on a true story  ...       Dec 23, 2015  Oscar Winner  Writing (adapted screenplay)
+
+[12 rows x 31 columns]
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-08 18:28:08[0m
+Columns with more than 2.5% missing values:
+Primary Genre: 98.64%
+Distributor: 100.00%
+IMDb Rating: 100.00%
+IMDB vs RT disparity: 100.00%
+Oscar Detail: 96.01%
+Duplicate rows in the 'Film' column:
+                   Film  Year            Script Type  ...  Release Date (US) Oscar Winners                  Oscar Detail
+681       That's My Boy  2012    original screenplay  ...       Jun 15, 2012           NaN                           NaN
+682       That's My Boy  2012    original screenplay  ...       Jun 15, 2012           NaN                           NaN
+703         Big Miracle  2012             adaptation  ...        Feb 3, 2012           NaN                           NaN
+704         Big Miracle  2012             adaptation  ...        Feb 3, 2012           NaN                           NaN
+709        Premium Rush  2012    original screenplay  ...       Aug 24, 2012           NaN                           NaN
+710        Premium Rush  2012    original screenplay  ...       Aug 24, 2012           NaN                           NaN
+713          The Master  2012    original screenplay  ...       Sep 21, 2012           NaN                           NaN
+714          The Master  2012    original screenplay  ...       Sep 21, 2012           NaN                           NaN
+1001  The Good Dinosaur  2015    original screenplay  ...       Nov 25, 2015           NaN                           NaN
+1062      The Big Short  2015             adaptation  ...  December 11, 2015           NaN                           NaN
+1135  The Good Dinosaur  2016    original screenplay  ...       Nov 25, 2015           NaN                           NaN
+1168      The Big Short  2016  based on a true story  ...       Dec 23, 2015  Oscar Winner  Writing (adapted screenplay)
+
+[12 rows x 31 columns]
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-08 18:31:50[0m
+[91m2023-11-08 18:33:22[0m
+Columns with more than 2.5% missing values:
+Primary Genre: 98.64%
+Distributor: 100.00%
+IMDb Rating: 100.00%
+IMDB vs RT disparity: 100.00%
+Oscar Detail: 96.01%
+Duplicate rows in the 'Film' column:
+                   Film  Year            Script Type  ...  Release Date (US) Oscar Winners                  Oscar Detail
+681       That's My Boy  2012    original screenplay  ...       Jun 15, 2012           NaN                           NaN
+682       That's My Boy  2012    original screenplay  ...       Jun 15, 2012           NaN                           NaN
+703         Big Miracle  2012             adaptation  ...        Feb 3, 2012           NaN                           NaN
+704         Big Miracle  2012             adaptation  ...        Feb 3, 2012           NaN                           NaN
+709        Premium Rush  2012    original screenplay  ...       Aug 24, 2012           NaN                           NaN
+710        Premium Rush  2012    original screenplay  ...       Aug 24, 2012           NaN                           NaN
+713          The Master  2012    original screenplay  ...       Sep 21, 2012           NaN                           NaN
+714          The Master  2012    original screenplay  ...       Sep 21, 2012           NaN                           NaN
+1001  The Good Dinosaur  2015    original screenplay  ...       Nov 25, 2015           NaN                           NaN
+1062      The Big Short  2015             adaptation  ...  December 11, 2015           NaN                           NaN
+1135  The Good Dinosaur  2016    original screenplay  ...       Nov 25, 2015           NaN                           NaN
+1168      The Big Short  2016  based on a true story  ...       Dec 23, 2015  Oscar Winner  Writing (adapted screenplay)
+
+[12 rows x 31 columns]
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-08 18:36:01[0m
+No columns with more than 2.5% missing values.
+No duplicates found in the 'Film' column.
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+[91m2023-11-08 18:38:13[0m
+No columns with more than 2.5% missing values.
+No duplicates found in the 'Film' column.
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+[91m2023-11-08 18:39:04[0m
+No columns with more than 2.5% missing values.
+No duplicates found in the 'Film' column.
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+[91m2023-11-08 18:39:37[0m
+Columns with more than 2.5% missing values:
+Primary Genre: 98.64%
+Distributor: 100.00%
+IMDb Rating: 100.00%
+IMDB vs RT disparity: 100.00%
+Oscar Detail: 96.01%
+Duplicate rows in the 'Film' column:
+                   Film  Year            Script Type  ...  Release Date (US) Oscar Winners                  Oscar Detail
+681       That's My Boy  2012    original screenplay  ...       Jun 15, 2012           NaN                           NaN
+682       That's My Boy  2012    original screenplay  ...       Jun 15, 2012           NaN                           NaN
+703         Big Miracle  2012             adaptation  ...        Feb 3, 2012           NaN                           NaN
+704         Big Miracle  2012             adaptation  ...        Feb 3, 2012           NaN                           NaN
+709        Premium Rush  2012    original screenplay  ...       Aug 24, 2012           NaN                           NaN
+710        Premium Rush  2012    original screenplay  ...       Aug 24, 2012           NaN                           NaN
+713          The Master  2012    original screenplay  ...       Sep 21, 2012           NaN                           NaN
+714          The Master  2012    original screenplay  ...       Sep 21, 2012           NaN                           NaN
+1001  The Good Dinosaur  2015    original screenplay  ...       Nov 25, 2015           NaN                           NaN
+1062      The Big Short  2015             adaptation  ...  December 11, 2015           NaN                           NaN
+1135  The Good Dinosaur  2016    original screenplay  ...       Nov 25, 2015           NaN                           NaN
+1168      The Big Short  2016  based on a true story  ...       Dec 23, 2015  Oscar Winner  Writing (adapted screenplay)
+
+[12 rows x 31 columns]
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+[91m2023-11-08 18:40:33[0m
+Columns with more than 2.5% missing values:
+Primary Genre: 98.64%
+Distributor: 100.00%
+IMDb Rating: 100.00%
+IMDB vs RT disparity: 100.00%
+Oscar Detail: 96.01%
+Duplicate rows in the 'Film' column:
+                   Film  Year            Script Type  ...  Release Date (US) Oscar Winners                  Oscar Detail
+681       That's My Boy  2012    original screenplay  ...       Jun 15, 2012           NaN                           NaN
+682       That's My Boy  2012    original screenplay  ...       Jun 15, 2012           NaN                           NaN
+703         Big Miracle  2012             adaptation  ...        Feb 3, 2012           NaN                           NaN
+704         Big Miracle  2012             adaptation  ...        Feb 3, 2012           NaN                           NaN
+709        Premium Rush  2012    original screenplay  ...       Aug 24, 2012           NaN                           NaN
+710        Premium Rush  2012    original screenplay  ...       Aug 24, 2012           NaN                           NaN
+713          The Master  2012    original screenplay  ...       Sep 21, 2012           NaN                           NaN
+714          The Master  2012    original screenplay  ...       Sep 21, 2012           NaN                           NaN
+1001  The Good Dinosaur  2015    original screenplay  ...       Nov 25, 2015           NaN                           NaN
+1062      The Big Short  2015             adaptation  ...  December 11, 2015           NaN                           NaN
+1135  The Good Dinosaur  2016    original screenplay  ...       Nov 25, 2015           NaN                           NaN
+1168      The Big Short  2016  based on a true story  ...       Dec 23, 2015  Oscar Winner  Writing (adapted screenplay)
+
+[12 rows x 31 columns]
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-08 18:48:02[0m
+[91m2023-11-08 18:48:40[0m
+Columns with more than 2.5% missing values:
+Primary Genre: 98.64%
+Distributor: 100.00%
+IMDb Rating: 100.00%
+IMDB vs RT disparity: 100.00%
+Oscar Detail: 96.01%
+Duplicate rows in the 'Film' column:
+                   Film  Year            Script Type  ...  Release Date (US)        Oscar Winners                  Oscar Detail
+681       That's My Boy  2012    original screenplay  ...       Jun 15, 2012  not an Oscar winner                           NaN
+682       That's My Boy  2012    original screenplay  ...       Jun 15, 2012  not an Oscar winner                           NaN
+703         Big Miracle  2012             adaptation  ...        Feb 3, 2012  not an Oscar winner                           NaN
+704         Big Miracle  2012             adaptation  ...        Feb 3, 2012  not an Oscar winner                           NaN
+709        Premium Rush  2012    original screenplay  ...       Aug 24, 2012  not an Oscar winner                           NaN
+710        Premium Rush  2012    original screenplay  ...       Aug 24, 2012  not an Oscar winner                           NaN
+713          The Master  2012    original screenplay  ...       Sep 21, 2012  not an Oscar winner                           NaN
+714          The Master  2012    original screenplay  ...       Sep 21, 2012  not an Oscar winner                           NaN
+1001  The Good Dinosaur  2015    original screenplay  ...       Nov 25, 2015  not an Oscar winner                           NaN
+1062      The Big Short  2015             adaptation  ...  December 11, 2015  not an Oscar winner                           NaN
+1135  The Good Dinosaur  2016    original screenplay  ...       Nov 25, 2015  not an Oscar winner                           NaN
+1168      The Big Short  2016  based on a true story  ...       Dec 23, 2015         Oscar Winner  Writing (adapted screenplay)
+
+[12 rows x 31 columns]
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-08 18:54:25[0m
+Columns with more than 2.5% missing values:
+Primary Genre: 98.64%
+Distributor: 100.00%
+IMDb Rating: 100.00%
+IMDB vs RT disparity: 100.00%
+Oscar Detail: 96.01%
+Duplicate rows in the 'Film' column:
+                   Film  Year            Script Type  ...  Release Date (US)        Oscar Winners                  Oscar Detail
+681       That's My Boy  2012    original screenplay  ...       Jun 15, 2012  not an Oscar winner                           NaN
+682       That's My Boy  2012    original screenplay  ...       Jun 15, 2012  not an Oscar winner                           NaN
+703         Big Miracle  2012             adaptation  ...        Feb 3, 2012  not an Oscar winner                           NaN
+704         Big Miracle  2012             adaptation  ...        Feb 3, 2012  not an Oscar winner                           NaN
+709        Premium Rush  2012    original screenplay  ...       Aug 24, 2012  not an Oscar winner                           NaN
+710        Premium Rush  2012    original screenplay  ...       Aug 24, 2012  not an Oscar winner                           NaN
+713          The Master  2012    original screenplay  ...       Sep 21, 2012  not an Oscar winner                           NaN
+714          The Master  2012    original screenplay  ...       Sep 21, 2012  not an Oscar winner                           NaN
+1001  The Good Dinosaur  2015    original screenplay  ...       Nov 25, 2015  not an Oscar winner                           NaN
+1062      The Big Short  2015             adaptation  ...  December 11, 2015  not an Oscar winner                           NaN
+1135  The Good Dinosaur  2016    original screenplay  ...       Nov 25, 2015  not an Oscar winner                           NaN
+1168      The Big Short  2016  based on a true story  ...       Dec 23, 2015         Oscar Winner  Writing (adapted screenplay)
+
+[12 rows x 31 columns]
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-08 19:05:05[0m
+Columns with more than 2.5% missing values:
+Primary Genre: 98.64%
+Distributor: 100.00%
+IMDb Rating: 100.00%
+IMDB vs RT disparity: 100.00%
+Oscar Detail: 96.01%
+Duplicate rows in the 'Film' column:
+                   Film  Year            Script Type  ...  Release Date (US) Oscar Winners                  Oscar Detail
+681       That's My Boy  2012    original screenplay  ...       Jun 15, 2012           NaN                           NaN
+682       That's My Boy  2012    original screenplay  ...       Jun 15, 2012           NaN                           NaN
+703         Big Miracle  2012             adaptation  ...        Feb 3, 2012           NaN                           NaN
+704         Big Miracle  2012             adaptation  ...        Feb 3, 2012           NaN                           NaN
+709        Premium Rush  2012    original screenplay  ...       Aug 24, 2012           NaN                           NaN
+710        Premium Rush  2012    original screenplay  ...       Aug 24, 2012           NaN                           NaN
+713          The Master  2012    original screenplay  ...       Sep 21, 2012           NaN                           NaN
+714          The Master  2012    original screenplay  ...       Sep 21, 2012           NaN                           NaN
+1001  The Good Dinosaur  2015    original screenplay  ...       Nov 25, 2015           NaN                           NaN
+1062      The Big Short  2015             adaptation  ...  December 11, 2015           NaN                           NaN
+1135  The Good Dinosaur  2016    original screenplay  ...       Nov 25, 2015           NaN                           NaN
+1168      The Big Short  2016  based on a true story  ...       Dec 23, 2015  Oscar Winner  Writing (adapted screenplay)
+
+[12 rows x 31 columns]
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-08 19:06:13[0m
+No columns with more than 2.5% missing values.
+No duplicates found in the 'Film' column.
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+[91m2023-11-08 19:07:28[0m
+Columns with more than 2.5% missing values:
+Primary Genre: 98.64%
+Distributor: 100.00%
+IMDb Rating: 100.00%
+IMDB vs RT disparity: 100.00%
+Oscar Detail: 96.01%
+Duplicate rows in the 'Film' column:
+                   Film  Year            Script Type  ...  Release Date (US)        Oscar Winners                  Oscar Detail
+681       That's My Boy  2012    original screenplay  ...       Jun 15, 2012  not an Oscar winner                           NaN
+682       That's My Boy  2012    original screenplay  ...       Jun 15, 2012  not an Oscar winner                           NaN
+703         Big Miracle  2012             adaptation  ...        Feb 3, 2012  not an Oscar winner                           NaN
+704         Big Miracle  2012             adaptation  ...        Feb 3, 2012  not an Oscar winner                           NaN
+709        Premium Rush  2012    original screenplay  ...       Aug 24, 2012  not an Oscar winner                           NaN
+710        Premium Rush  2012    original screenplay  ...       Aug 24, 2012  not an Oscar winner                           NaN
+713          The Master  2012    original screenplay  ...       Sep 21, 2012  not an Oscar winner                           NaN
+714          The Master  2012    original screenplay  ...       Sep 21, 2012  not an Oscar winner                           NaN
+1001  The Good Dinosaur  2015    original screenplay  ...       Nov 25, 2015  not an Oscar winner                           NaN
+1062      The Big Short  2015             adaptation  ...  December 11, 2015  not an Oscar winner                           NaN
+1135  The Good Dinosaur  2016    original screenplay  ...       Nov 25, 2015  not an Oscar winner                           NaN
+1168      The Big Short  2016  based on a true story  ...       Dec 23, 2015         Oscar Winner  Writing (adapted screenplay)
+
+[12 rows x 31 columns]
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-08 19:12:31[0m
+Columns with more than 2.5% missing values:
+Primary Genre: 98.64%
+Distributor: 100.00%
+IMDb Rating: 100.00%
+IMDB vs RT disparity: 100.00%
+Oscar Detail: 96.01%
+Duplicate rows in the 'Film' column:
+                   Film  Year            Script Type  ...  Release Date (US)        Oscar Winners                  Oscar Detail
+681       That's My Boy  2012    original screenplay  ...       Jun 15, 2012  not an Oscar winner                           NaN
+682       That's My Boy  2012    original screenplay  ...       Jun 15, 2012  not an Oscar winner                           NaN
+703         Big Miracle  2012             adaptation  ...        Feb 3, 2012  not an Oscar winner                           NaN
+704         Big Miracle  2012             adaptation  ...        Feb 3, 2012  not an Oscar winner                           NaN
+709        Premium Rush  2012    original screenplay  ...       Aug 24, 2012  not an Oscar winner                           NaN
+710        Premium Rush  2012    original screenplay  ...       Aug 24, 2012  not an Oscar winner                           NaN
+713          The Master  2012    original screenplay  ...       Sep 21, 2012  not an Oscar winner                           NaN
+714          The Master  2012    original screenplay  ...       Sep 21, 2012  not an Oscar winner                           NaN
+1001  The Good Dinosaur  2015    original screenplay  ...       Nov 25, 2015  not an Oscar winner                           NaN
+1062      The Big Short  2015             adaptation  ...  December 11, 2015  not an Oscar winner                           NaN
+1135  The Good Dinosaur  2016    original screenplay  ...       Nov 25, 2015  not an Oscar winner                           NaN
+1168      The Big Short  2016  based on a true story  ...       Dec 23, 2015         Oscar Winner  Writing (adapted screenplay)
+
+[12 rows x 31 columns]
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated
+[91m2023-11-08 19:14:23[0m
+Columns with more than 2.5% missing values:
+Primary Genre: 98.64%
+Distributor: 100.00%
+IMDb Rating: 100.00%
+IMDB vs RT disparity: 100.00%
+Oscar Detail: 96.01%
+Duplicate rows in the 'Film' column:
+                   Film  Year            Script Type  ...  Release Date (US)        Oscar Winners                  Oscar Detail
+681       That's My Boy  2012    original screenplay  ...       Jun 15, 2012  not an Oscar winner                           NaN
+682       That's My Boy  2012    original screenplay  ...       Jun 15, 2012  not an Oscar winner                           NaN
+703         Big Miracle  2012             adaptation  ...        Feb 3, 2012  not an Oscar winner                           NaN
+704         Big Miracle  2012             adaptation  ...        Feb 3, 2012  not an Oscar winner                           NaN
+709        Premium Rush  2012    original screenplay  ...       Aug 24, 2012  not an Oscar winner                           NaN
+710        Premium Rush  2012    original screenplay  ...       Aug 24, 2012  not an Oscar winner                           NaN
+713          The Master  2012    original screenplay  ...       Sep 21, 2012  not an Oscar winner                           NaN
+714          The Master  2012    original screenplay  ...       Sep 21, 2012  not an Oscar winner                           NaN
+1001  The Good Dinosaur  2015    original screenplay  ...       Nov 25, 2015  not an Oscar winner                           NaN
+1062      The Big Short  2015             adaptation  ...  December 11, 2015  not an Oscar winner                           NaN
+1135  The Good Dinosaur  2016    original screenplay  ...       Nov 25, 2015  not an Oscar winner                           NaN
+1168      The Big Short  2016  based on a true story  ...       Dec 23, 2015         Oscar Winner  Writing (adapted screenplay)
+
+[12 rows x 31 columns]
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+[91m2023-11-08 19:16:18[0m
+Columns with more than 2.5% missing values:
+Primary Genre: 98.64%
+Distributor: 100.00%
+IMDb Rating: 100.00%
+IMDB vs RT disparity: 100.00%
+Oscar Detail: 96.01%
+Duplicate rows in the 'Film' column:
+                   Film  Year            Script Type  ...  Release Date (US)        Oscar Winners                  Oscar Detail
+681       That's My Boy  2012    original screenplay  ...       Jun 15, 2012  not an Oscar winner                           NaN
+682       That's My Boy  2012    original screenplay  ...       Jun 15, 2012  not an Oscar winner                           NaN
+703         Big Miracle  2012             adaptation  ...        Feb 3, 2012  not an Oscar winner                           NaN
+704         Big Miracle  2012             adaptation  ...        Feb 3, 2012  not an Oscar winner                           NaN
+709        Premium Rush  2012    original screenplay  ...       Aug 24, 2012  not an Oscar winner                           NaN
+710        Premium Rush  2012    original screenplay  ...       Aug 24, 2012  not an Oscar winner                           NaN
+713          The Master  2012    original screenplay  ...       Sep 21, 2012  not an Oscar winner                           NaN
+714          The Master  2012    original screenplay  ...       Sep 21, 2012  not an Oscar winner                           NaN
+1001  The Good Dinosaur  2015    original screenplay  ...       Nov 25, 2015  not an Oscar winner                           NaN
+1062      The Big Short  2015             adaptation  ...  December 11, 2015  not an Oscar winner                           NaN
+1135  The Good Dinosaur  2016    original screenplay  ...       Nov 25, 2015  not an Oscar winner                           NaN
+1168      The Big Short  2016  based on a true story  ...       Dec 23, 2015         Oscar Winner  Writing (adapted screenplay)
+
+[12 rows x 31 columns]
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Excel file updated

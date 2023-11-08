@@ -7,6 +7,9 @@ import os
 import seaborn as sns
 import matplotlib.pyplot as plt
 import re 
+from sklearn import preprocessing
+from sklearn.preprocessing import MultiLabelBinarizer
+
 
 
 
@@ -27,6 +30,18 @@ reset_text_color = '\033[0m'
 
 # Print the formatted date and time in red
 log(f"{red_text}{formatted_datetime}{reset_text_color}")
+
+#Essential first checks
+
+# Fill NaN values in "Oscar Winners" with "not an Oscar winner"
+df['Oscar Winners'] = df['Oscar Winners'].fillna("not an Oscar winner")
+
+# Check for duplicates in the "Film" column
+duplicates = df[df.duplicated(subset="Film", keep=False)]
+
+# Deleting irelevant columns for our analysis
+columns_to_delete = ['Film', 'Rotten Tomatoes vs Metacritic  deviance','Opening Weekend','Opening weekend ($million)',' Budget recovered',' Budget recovered opening weekend']  # Specify the columns to delete
+df = df.drop(columns=columns_to_delete)
 
 #########################
 #           PART1       #
@@ -55,8 +70,7 @@ df['Oscar Winners'] = df['Oscar Winners'].astype(str)
 # Apply the standardization function to the column containing the target phrase
 df['Oscar Winners'] = df['Oscar Winners'].apply(lambda x: re.sub(target_phrase, standardize_text, x, flags=re.IGNORECASE))
 
-# Fill NaN values in "Oscar Winners" with "not an Oscar winner"
-df['Oscar Winners'] = df['Oscar Winners'].fillna("not an Oscar winner")
+
 ########################
 #        PART 2        #
 ########################
@@ -73,6 +87,18 @@ columns_to_delete = missing_percent[missing_percent > 2.5].index
 # Delete the columns with more than 97% missing values
 df.drop(columns=columns_to_delete, inplace=True)
 
+# Drop rows with any empty cells
+df_cleaned = df.dropna()
+
+# Optionally, reset the index of the cleaned DataFrame
+df_cleaned.reset_index(drop=True, inplace=True)
+
+df_cleaned.to_excel('/home/tofi-machine/Documents/DataMining/DataMining/movies.xlsx', index=False)  # Replace with your file path
+df_cleaned = pd.read_excel(file_path)
+
+df = df_cleaned
+
+
 
 # Print the columns with more than 2.5% missing values
 if not columns_with_missing_values.empty:
@@ -82,8 +108,6 @@ if not columns_with_missing_values.empty:
 else:
     log("No columns with more than 2.5% missing values.")
 
-# Check for duplicates in the "Film" column
-duplicates = df[df.duplicated(subset="Film", keep=False)]
 
 # Print the duplicate rows
 if not duplicates.empty:
@@ -134,6 +158,45 @@ rows_to_delete = df.apply(contains_minus_without_number, axis=1)
 # Delete the marked rows from the DataFrame
 df = df[~rows_to_delete]
 
+# Drop rows with any empty cells
+df_clean = df.dropna()
+
+############################
+#         PART 5           #
+############################
+# One hot encoding
+enc = preprocessing.OrdinalEncoder()
+enc.fit(df[["Script Type"]]) 
+df['one-hot encoding ScriptType']=enc.transform(df[["Script Type"]])
+
+# Clean the 'Genre' column by removing leading/trailing spaces and converting to lowercase
+df['Genre'] = df['Genre'].str.strip().str.lower()
+
+# Split the 'Genre' column by comma and create lists
+df['Genre'] = df['Genre'].str.split(',')
+
+# Convert the lists of genres to sets to remove duplicates
+df['Genre'] = df['Genre'].apply(lambda x: list(set(x)))
+
+# Initialize MultiLabelBinarizer
+mlb = MultiLabelBinarizer()
+
+# Transform the 'Genre' column into one-hot encoded format
+encoded_genres = mlb.fit_transform(df['Genre'])
+
+# Create a new DataFrame with the one-hot encoded genres
+encoded_df = pd.DataFrame(encoded_genres, columns=mlb.classes_)
+
+# Concatenate the one-hot encoded genres with the original DataFrame
+df_encoded = pd.concat([df, encoded_df], axis=1)
+
+# Optionally, drop the original 'Genre' column
+df_encoded.drop(columns=['Genre'], inplace=True)
+
+# Now, df_encoded contains one-hot encoded genre information
+print(df_encoded)
+
+df = df_encoded
 
 
 # Display basic information about the dataset
