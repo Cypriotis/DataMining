@@ -219,6 +219,28 @@ enc = preprocessing.OrdinalEncoder()
 enc.fit(df[["Genre"]]) 
 df['one-hot encoding Genre']=enc.transform(df[["Genre"]])
 
+enc = preprocessing.OrdinalEncoder()
+enc.fit(df[["Oscar Winners"]]) 
+df['one-hot encoding Oscar Winners']=enc.transform(df[["Oscar Winners"]])
+
+# Specify the column you want to invert
+column_name_to_invert = 'one-hot encoding Oscar Winners'
+
+# Invert the values in the specified column
+df[column_name_to_invert] = df[column_name_to_invert].apply(lambda x: 1 if x == 0 else 0)
+
+# Specify the target column and the deletion probability
+target_column = 'column_name_to_invert'  # Replace with the actual column name
+deletion_probability = 0.9  # 50% chance
+
+# Create a mask based on the condition (cell value equals 0)
+delete_mask = (df[column_name_to_invert] == 0)
+
+# Apply random deletion based on the probability
+df = df[~(delete_mask & (np.random.rand(len(df)) < deletion_probability))]
+
+df.to_excel('/home/tofi-machine/Documents/DataMining/DataMining/movies.xlsx', index=False)  # Replace with your file path
+df = pd.read_excel(file_path)
 
 # Display basic information about the dataset
 print("Number of rows and columns:", df.shape)
