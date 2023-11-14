@@ -9,6 +9,8 @@ import matplotlib.pyplot as plt
 import re 
 from sklearn import preprocessing
 from sklearn.preprocessing import MultiLabelBinarizer
+from spellchecker import SpellChecker
+
 
 
 
@@ -169,34 +171,53 @@ enc = preprocessing.OrdinalEncoder()
 enc.fit(df[["Script Type"]]) 
 df['one-hot encoding ScriptType']=enc.transform(df[["Script Type"]])
 
-# Clean the 'Genre' column by removing leading/trailing spaces and converting to lowercase
-df['Genre'] = df['Genre'].str.strip().str.lower()
+# Save the modified DataFrame back to the Excel file
+df.to_excel('/home/tofi-machine/Documents/DataMining/DataMining/movies.xlsx', index=False)  # Replace with your file path
+df = pd.read_excel(file_path)
 
-# Split the 'Genre' column by comma and create lists
-df['Genre'] = df['Genre'].str.split(',')
+# Specify the column containing lists of strings
+column_name = 'Genre'
 
-# Convert the lists of genres to sets to remove duplicates
-df['Genre'] = df['Genre'].apply(lambda x: list(set(x)))
+# Initialize the SpellChecker
+spell = SpellChecker()
 
-# Initialize MultiLabelBinarizer
-mlb = MultiLabelBinarizer()
+# Function to correct spelling in a given cell
+def correct_spelling(cell_content, spell_checker):
+    if pd.notna(cell_content):
+        words = [word.strip() for word in cell_content.split(',')]
+        corrected_words = [spell_checker.correction(word) if spell_checker.correction(word) else word for word in words]
+        return ', '.join(corrected_words)
+    else:
+        return cell_content
+    
+# Apply the correction function to the specified column
+df[column_name] = df[column_name].apply(lambda x: correct_spelling(x, spell))
 
-# Transform the 'Genre' column into one-hot encoded format
-encoded_genres = mlb.fit_transform(df['Genre'])
+# Save the modified DataFrame back to the Excel file
+df.to_excel('/home/tofi-machine/Documents/DataMining/DataMining/movies.xlsx', index=False)  # Replace with your file path
+df = pd.read_excel(file_path)
 
-# Create a new DataFrame with the one-hot encoded genres
-encoded_df = pd.DataFrame(encoded_genres, columns=mlb.classes_)
 
-# Concatenate the one-hot encoded genres with the original DataFrame
-df_encoded = pd.concat([df, encoded_df], axis=1)
+# Specify the column containing strings with commas
+column_name = 'Genre'
 
-# Optionally, drop the original 'Genre' column
-df_encoded.drop(columns=['Genre'], inplace=True)
+# Function to remove anything after a comma
+def remove_after_comma(cell_content):
+    if pd.notna(cell_content):
+        return cell_content.split(',')[0]  # Keep only the content before the first comma
+    else:
+        return cell_content
 
-# Now, df_encoded contains one-hot encoded genre information
-print(df_encoded)
+# Apply the function to the specified column
+df[column_name] = df[column_name].apply(remove_after_comma)
+# Save the modified DataFrame back to the Excel file
+df.to_excel('/home/tofi-machine/Documents/DataMining/DataMining/movies.xlsx', index=False)  # Replace with your file path
+df = pd.read_excel(file_path)
 
-df = df_encoded
+# One hot encoding
+enc = preprocessing.OrdinalEncoder()
+enc.fit(df[["Genre"]]) 
+df['one-hot encoding Genre']=enc.transform(df[["Genre"]])
 
 
 # Display basic information about the dataset
