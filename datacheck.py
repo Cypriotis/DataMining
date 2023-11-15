@@ -43,7 +43,13 @@ duplicates = df[df.duplicated(subset="Film", keep=False)]
 
 # Deleting irelevant columns for our analysis
 columns_to_delete = ['Film', 'Rotten Tomatoes vs Metacritic  deviance','Opening Weekend','Opening weekend ($million)',' Budget recovered',' Budget recovered opening weekend']  # Specify the columns to delete
-df = df.drop(columns=columns_to_delete)
+
+# Check if the specified columns exist in the DataFrame
+columns_exist = all(col in df.columns for col in columns_to_delete)
+
+if columns_exist:
+    # Delete the specified columns
+    df = df.drop(columns=columns_to_delete)
 
 #########################
 #           PART1       #
@@ -231,13 +237,22 @@ df[column_name_to_invert] = df[column_name_to_invert].apply(lambda x: 1 if x == 
 
 # Specify the target column and the deletion probability
 target_column = 'column_name_to_invert'  # Replace with the actual column name
-deletion_probability = 0.9  # 50% chance
+deletion_probability = 0.96  # 50% chance
 
 # Create a mask based on the condition (cell value equals 0)
 delete_mask = (df[column_name_to_invert] == 0)
 
 # Apply random deletion based on the probability
 df = df[~(delete_mask & (np.random.rand(len(df)) < deletion_probability))]
+
+# Deleting irelevant columns for our analysis
+columns_to_delete = ['Genre', 'Script Type' , 'Release Date (US)',' of Gross earned abroad','Oscar Winners']
+# Check if the specified columns exist in the DataFrame
+columns_exist = all(col in df.columns for col in columns_to_delete)
+
+if columns_exist:
+    # Delete the specified columns
+    df = df.drop(columns=columns_to_delete)
 
 df.to_excel('/home/tofi-machine/Documents/DataMining/DataMining/movies.xlsx', index=False)  # Replace with your file path
 df = pd.read_excel(file_path)
@@ -252,7 +267,7 @@ print(df.dtypes)
 total_records = len(df)
 
 # Count the number of records that won an Oscar
-oscar_winners = df[df['Oscar Winners'] == 'Oscar Winner']
+oscar_winners = df[df['one-hot encoding Oscar Winners'] == 1 ]
 num_oscar_winners = len(oscar_winners)
 
 # Calculate the percentage of records that won an Oscar
@@ -269,7 +284,7 @@ print(f"Percentage of non-Oscar winners: {percentage_non_oscar_winners:.2f}%")
 
 # Create a Plotly pie chart
 fig = px.pie(
-    names=['Oscar Winners', 'notyet'],
+    names=['1', '0'],
     values=[percentage_oscar_winners, percentage_non_oscar_winners],
     title=f"Percentage of Oscar Winners in the Dataset ({total_records} records)"
 )
@@ -298,7 +313,7 @@ plt.show()
 
 # Countplot for Oscar Winners
 plt.figure(figsize=(6, 4))
-sns.countplot(data=df, x='Oscar Winners')
+sns.countplot(data=df, x='one-hot encoding Oscar Winners')
 plt.title("Count of Oscar Winners")
 plt.show()
 

@@ -14,8 +14,7 @@ df['Domestic gross ($million)'] = df['Domestic gross ($million)'].replace(',', '
 df['Domestic Gross'] = df['Domestic Gross'].replace(',', '', regex=True).astype(float) 
 df['Foreign Gross ($million)'] = df['Foreign Gross ($million)'].replace(',', '', regex=True).astype(float)
 df['Foreign Gross'] = df['Foreign Gross'].replace(',', '', regex=True).astype(float)           
-df['Worldwide Gross'] = df['Worldwide Gross'].replace(',', '', regex=True).astype(float)        
-
+df['Worldwide Gross'] = df['Worldwide Gross'].replace(',', '', regex=True).astype(float)
 # Step 1: Separate features (X) and target variable (y)
 X = df.drop('one-hot encoding Oscar Winners', axis=1)
 y = df['one-hot encoding Oscar Winners']
@@ -32,7 +31,7 @@ rf_classifier = RandomForestClassifier(random_state=42)
 rf_classifier.fit(X_train_resampled, y_train_resampled)
 
 # Save the trained model to a file
-joblib.dump(rf_classifier, "./trained_model.pkl")
+joblib.dump(rf_classifier, "/home/tofi-machine/Documents/DataMining/DataMining/trained_model.pkl")
 
 # Step 5: Make predictions on the test set
 y_pred = rf_classifier.predict(X_test)
