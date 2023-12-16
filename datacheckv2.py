@@ -11,7 +11,7 @@ import os
 from datetime import datetime
 from sklearn.preprocessing import OneHotEncoder
 
-from datacheck import standardize_text
+from datacheck  import standardize_text
 
 # Function to load data from Excel file
 def load_data(file_path):
@@ -60,6 +60,7 @@ def drop_irrelevant_columns(df, columns_to_delete):
     if all(col in df.columns for col in columns_to_delete):
         df = df.drop(columns=columns_to_delete, axis=1)
     return df
+
 
 # Function to standardize text in the 'Oscar Winners' column
 def standardize_text_column(df, target_phrase, desired_formatting):
