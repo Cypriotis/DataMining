@@ -47,45 +47,48 @@ plt.ylabel('Inertia')
 plt.show()
 
 # Based on the Elbow Method, choose the optimal number of clusters
-k_optimal = 6  # Adjust based on the plot
+k_optimal = 5  # Adjust based on the plot
 
 # Apply K-Means clustering
 kmeans = KMeans(n_clusters=k_optimal, random_state=42)
 df['Cluster_KMeans'] = kmeans.fit_predict(df_scaled)
 
-# Characterize each cluster
-cluster_characteristics = df.groupby('Cluster_KMeans').mean()
-print(cluster_characteristics)
+# Characterize each cluster, focusing on Oscar Wins
+oscar_columns = [
+    'one-hot encoding Oscar Winners',
+    'Rotten Tomatoes  critics', 'Metacritic  critics', 'Average critics ',
+    'Rotten Tomatoes Audience ', 'Metacritic Audience ', 'Average audience ',
+    'Audience vs Critics deviance ', 'Domestic gross ($million)',
+    'Foreign Gross ($million)', 'Worldwide Gross ($million)', 'Budget ($million)'
+]
 
-# Scatter plots focusing on Oscar Winners
+# Select only numeric columns related to Oscar Wins
+numeric_oscar_columns = [col for col in oscar_columns if col in df.columns]
+
+cluster_characteristics_oscar = df.groupby('Cluster_KMeans')[numeric_oscar_columns].mean()
+print(cluster_characteristics_oscar)
+
+# Scatter plot for the first three features, focusing on Oscar Wins
 sns.set(style="whitegrid")
-plt.figure(figsize=(16, 10))
+plt.figure(figsize=(12, 8))
 
-# Scatter plots for different comparisons with more focus on Oscar Winners
-plt.subplot(2, 3, 1)
-sns.scatterplot(x='Rotten Tomatoes  critics', y='Metacritic  critics',
-                hue='one-hot encoding Oscar Winners', data=df, palette='Set1')
-plt.title('Oscar Winners vs Critics Ratings')
+# Scatter plot for 'Year' vs 'Rotten Tomatoes critics'
+plt.subplot(2, 2, 1)
+sns.scatterplot(x='Year', y='Rotten Tomatoes  critics', hue='Cluster_KMeans', data=df, palette='Set1')
+plt.title('Year vs Rotten Tomatoes Critics (Oscar Wins)')
 
-plt.subplot(2, 3, 2)
-sns.scatterplot(x='Rotten Tomatoes Audience ', y='Metacritic Audience ',
-                hue='one-hot encoding Oscar Winners', data=df, palette='Set1')
-plt.title('Oscar Winners vs Audience Ratings')
+# Scatter plot for 'Year' vs 'Metacritic critics'
+plt.subplot(2, 2, 2)
+sns.scatterplot(x='Year', y='Metacritic  critics', hue='Cluster_KMeans', data=df, palette='Set1')
+plt.title('Year vs Metacritic Critics (Oscar Wins)')
 
-plt.subplot(2, 3, 3)
-sns.scatterplot(x='Domestic gross ($million)', y='Foreign Gross ($million)',
-                hue='one-hot encoding Oscar Winners', data=df, palette='Set1')
-plt.title('Oscar Winners vs Gross Revenue')
+# Scatter plot for 'Rotten Tomatoes critics' vs 'Metacritic critics'
+plt.subplot(2, 2, 3)
+sns.scatterplot(x='Rotten Tomatoes  critics', y='Metacritic  critics', hue='Cluster_KMeans', data=df, palette='Set1')
+plt.title('Rotten Tomatoes Critics vs Metacritic Critics (Oscar Wins)')
 
-plt.subplot(2, 3, 4)
-sns.scatterplot(x='Average critics ', y='Average audience ',
-                hue='one-hot encoding Oscar Winners', data=df, palette='Set1')
-plt.title('Oscar Winners vs Average Ratings')
-
-plt.subplot(2, 3, 5)
-sns.scatterplot(x='one-hot encoding Oscar Winners', y='Rotten Tomatoes  critics',
-                hue='Cluster_KMeans', data=df, palette='Set1')
-plt.title('Oscar Winners vs Rotten Tomatoes Critics (Clustered)')
+# Remove the empty subplot in the last position
+plt.subplot(2, 2, 4).axis('off')
 
 plt.tight_layout()
 plt.show()
