@@ -2472,3 +2472,29 @@ IMDb Rating: 100.00%
 IMDB vs RT disparity: 100.00%
 Oscar Detail: 96.04%
 Excel file updated
+[91m2023-12-16 16:15:21[0m
+[91m2023-12-16 16:15:34[0m
+Duplicate rows in the 'Film' column:
+                   Film  Year            Script Type  ...  Release Date (US)        Oscar Winners                  Oscar Detail
+681       That's My Boy  2012    original screenplay  ...       Jun 15, 2012  not an Oscar winner                           NaN
+682       That's My Boy  2012    original screenplay  ...       Jun 15, 2012  not an Oscar winner                           NaN
+703         Big Miracle  2012             adaptation  ...        Feb 3, 2012  not an Oscar winner                           NaN
+704         Big Miracle  2012             adaptation  ...        Feb 3, 2012  not an Oscar winner                           NaN
+709        Premium Rush  2012    original screenplay  ...       Aug 24, 2012  not an Oscar winner                           NaN
+710        Premium Rush  2012    original screenplay  ...       Aug 24, 2012  not an Oscar winner                           NaN
+713          The Master  2012    original screenplay  ...       Sep 21, 2012  not an Oscar winner                           NaN
+714          The Master  2012    original screenplay  ...       Sep 21, 2012  not an Oscar winner                           NaN
+1001  The Good Dinosaur  2015    original screenplay  ...       Nov 25, 2015  not an Oscar winner                           NaN
+1062      The Big Short  2015             adaptation  ...  December 11, 2015  not an Oscar winner                           NaN
+1135  The Good Dinosaur  2016    original screenplay  ...       Nov 25, 2015  not an Oscar winner                           NaN
+1168      The Big Short  2016  based on a true story  ...       Dec 23, 2015         Oscar Winner  Writing (adapted screenplay)
+
+[12 rows x 31 columns]
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Columns with more than 2.5% missing values:
+Primary Genre: 98.63%
+Distributor: 100.00%
+IMDb Rating: 100.00%
+IMDB vs RT disparity: 100.00%
+Oscar Detail: 96.04%
+Excel file updated
