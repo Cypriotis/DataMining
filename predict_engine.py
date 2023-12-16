@@ -8,7 +8,7 @@ import joblib
 rf_classifier = joblib.load("/home/tofi-machine/Documents/DataMining/DataMining/trained_model.pkl")
 
 # Load the new dataset
-df = pd.read_excel("/home/tofi-machine/Documents/DataMining/DataMining/test.xlsx")
+df = pd.read_excel("/home/tofi-machine/Documents/DataMining/DataMining/moviese.xlsx")
 
 # Data Cleaning and Feature Engineering - You need to perform these steps
 df['Domestic gross ($million)'] = df['Domestic gross ($million)'].replace(',', '', regex=True).astype(float)

@@ -16,7 +16,7 @@ from spellchecker import SpellChecker
 
 
 # Load the Excel file
-file_path = '/home/tofi-machine/Documents/DataMining/DataMining/movies.xlsx'  # Replace with the path to your Excel file
+file_path = '/home/tofi-machine/Documents/DataMining/DataMining/movies.xlsx'  
 df = pd.read_excel(file_path)
 # Get the current date and time
 current_datetime = datetime.now()
@@ -40,6 +40,18 @@ df['Oscar Winners'] = df['Oscar Winners'].fillna("not an Oscar winner")
 
 # Check for duplicates in the "Film" column
 duplicates = df[df.duplicated(subset="Film", keep=False)]
+
+# Print the duplicate rows
+if not duplicates.empty:
+    log("Duplicate rows in the 'Film' column:")
+    log(str(duplicates))
+else:
+    log("No duplicates found in the 'Film' column.")
+
+# Drop the duplicate rows, keeping the first occurrence
+df = df.drop(duplicates.index)
+
+log("Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.")
 
 # Deleting irelevant columns for our analysis
 columns_to_delete = ['Film', 'Rotten Tomatoes vs Metacritic  deviance','Opening Weekend','Opening weekend ($million)',' Budget recovered',' Budget recovered opening weekend']  # Specify the columns to delete
@@ -117,17 +129,7 @@ else:
     log("No columns with more than 2.5% missing values.")
 
 
-# Print the duplicate rows
-if not duplicates.empty:
-    log("Duplicate rows in the 'Film' column:")
-    log(str(duplicates))
-else:
-    log("No duplicates found in the 'Film' column.")
 
-# Drop the duplicate rows, keeping the first occurrence
-df = df.drop(duplicates.index)
-
-log("Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.")
 
 #######################
 #        PART 3       #
@@ -237,7 +239,7 @@ df[column_name_to_invert] = df[column_name_to_invert].apply(lambda x: 1 if x == 
 
 # Specify the target column and the deletion probability
 target_column = 'column_name_to_invert'  # Replace with the actual column name
-deletion_probability = 0.96  # 50% chance
+deletion_probability = 0.90  # 0.958% chance
 
 # Create a mask based on the condition (cell value equals 0)
 delete_mask = (df[column_name_to_invert] == 0)
