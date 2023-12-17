@@ -39,19 +39,20 @@ plt.ylabel('Inertia')
 plt.show()
 
 # Based on the Elbow Method, choose the optimal number of clusters
-k_optimal = 5  # Adjust based on the plot
+k_optimal = 2  # Adjust based on the plot
 
 # Apply K-Means clustering
 kmeans = KMeans(n_clusters=k_optimal, random_state=42)
 df['Cluster_KMeans'] = kmeans.fit_predict(df_scaled)
+df.to_excel('/home/tofi-machine/Documents/DataMining/DataMining/moviesclustered.xlsx', index=False)  # Replace with your file path
+
 
 # Characterize each cluster, focusing on Oscar Wins
 oscar_columns = [
     'one-hot encoding Oscar Winners',
     'Rotten Tomatoes  critics', 'Metacritic  critics', 'Average critics ',
     'Rotten Tomatoes Audience ', 'Metacritic Audience ', 'Average audience ',
-    'Audience vs Critics deviance ', 'Domestic gross ($million)',
-    'Foreign Gross ($million)', 'Worldwide Gross ($million)', 'Budget ($million)'
+    'Audience vs Critics deviance '
 ]
 
 # Select only numeric columns related to Oscar Wins
