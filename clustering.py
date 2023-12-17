@@ -17,14 +17,6 @@ features_for_clustering = [
     'one-hot encoding ScriptType', 'one-hot encoding Genre', 'one-hot encoding Oscar Winners'
 ]
 
-# Replace non-numeric values with NaN in 'Foreign Gross' and 'Worldwide Gross'
-df['Foreign Gross'] = pd.to_numeric(df['Foreign Gross'], errors='coerce')
-df['Worldwide Gross'] = pd.to_numeric(df['Worldwide Gross'], errors='coerce')
-
-# Convert the columns to numeric
-df['Foreign Gross'] = pd.to_numeric(df['Foreign Gross'])
-df['Worldwide Gross'] = pd.to_numeric(df['Worldwide Gross'])
-
 # Select only relevant features for clustering
 df_for_clustering = df[features_for_clustering]
 

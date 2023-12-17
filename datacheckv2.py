@@ -30,6 +30,15 @@ def log_datetime():
     reset_text_color = '\033[0m'
     print(f"{red_text}{formatted_datetime}{reset_text_color}")
 
+def convert_numeric(df):
+    # Replace non-numeric values with NaN in 'Foreign Gross' and 'Worldwide Gross'
+    df['Foreign Gross'] = pd.to_numeric(df['Foreign Gross'], errors='coerce')
+    df['Worldwide Gross'] = pd.to_numeric(df['Worldwide Gross'], errors='coerce')
+
+    # Convert the columns to numeric
+    df['Foreign Gross'] = pd.to_numeric(df['Foreign Gross'])
+    df['Worldwide Gross'] = pd.to_numeric(df['Worldwide Gross'])
+
 # Function to fill missing values in the 'Oscar Winners' column
 def fill_missing_oscar_values(df):
     # Print the columns before filling missing values
@@ -242,6 +251,7 @@ def main():
     df = load_data(file_path)
 
     log_datetime()
+    convert_numeric(df)
     fill_missing_oscar_values(df)
     drop_duplicates(df)
 
