@@ -16,10 +16,11 @@ from spellchecker import SpellChecker
 
 
 # Load the Excel file
-file_path = '/home/tofi-machine/Documents/DataMining/DataMining/movies.xlsx'  
+file_path = '/home/tofi-machine/Documents/DataMining/DataMining/test_sample.xlsx'  
 df = pd.read_excel(file_path)
 # Get the current date and time
 current_datetime = datetime.now()
+print(df.columns)
 
 # Format and log the current date and time
 formatted_datetime = current_datetime.strftime('%Y-%m-%d %H:%M:%S')
@@ -113,7 +114,7 @@ df_cleaned = df.dropna()
 # Optionally, reset the index of the cleaned DataFrame
 df_cleaned.reset_index(drop=True, inplace=True)
 
-df_cleaned.to_excel('/home/tofi-machine/Documents/DataMining/DataMining/movies.xlsx', index=False)  # Replace with your file path
+df_cleaned.to_excel('/home/tofi-machine/Documents/DataMining/DataMining/test_sample.xlsx', index=False)  # Replace with your file path
 df_cleaned = pd.read_excel(file_path)
 
 df = df_cleaned
@@ -180,7 +181,7 @@ enc.fit(df[["Script Type"]])
 df['one-hot encoding ScriptType']=enc.transform(df[["Script Type"]])
 
 # Save the modified DataFrame back to the Excel file
-df.to_excel('/home/tofi-machine/Documents/DataMining/DataMining/movies.xlsx', index=False)  # Replace with your file path
+df.to_excel('/home/tofi-machine/Documents/DataMining/DataMining/test_sample.xlsx', index=False)  # Replace with your file path
 df = pd.read_excel(file_path)
 
 # Specify the column containing lists of strings
@@ -202,7 +203,7 @@ def correct_spelling(cell_content, spell_checker):
 df[column_name] = df[column_name].apply(lambda x: correct_spelling(x, spell))
 
 # Save the modified DataFrame back to the Excel file
-df.to_excel('/home/tofi-machine/Documents/DataMining/DataMining/movies.xlsx', index=False)  # Replace with your file path
+df.to_excel('/home/tofi-machine/Documents/DataMining/DataMining/test_sample.xlsx', index=False)  # Replace with your file path
 df = pd.read_excel(file_path)
 
 
@@ -219,7 +220,7 @@ def remove_after_comma(cell_content):
 # Apply the function to the specified column
 df[column_name] = df[column_name].apply(remove_after_comma)
 # Save the modified DataFrame back to the Excel file
-df.to_excel('/home/tofi-machine/Documents/DataMining/DataMining/movies.xlsx', index=False)  # Replace with your file path
+df.to_excel('/home/tofi-machine/Documents/DataMining/DataMining/test_sample.xlsx', index=False)  # Replace with your file path
 df = pd.read_excel(file_path)
 
 # One hot encoding
@@ -256,7 +257,7 @@ if columns_exist:
     # Delete the specified columns
     df = df.drop(columns=columns_to_delete)
 
-df.to_excel('/home/tofi-machine/Documents/DataMining/DataMining/movies.xlsx', index=False)  # Replace with your file path
+df.to_excel('/home/tofi-machine/Documents/DataMining/DataMining/test_sample.xlsx', index=False)  # Replace with your file path
 df = pd.read_excel(file_path)
 
 # Display basic information about the dataset
@@ -338,5 +339,5 @@ print("Updated DataFrame after deleting rows:")
 print(df)
 
 # Save the modified DataFrame back to the Excel file
-df.to_excel('/home/tofi-machine/Documents/DataMining/DataMining/movies.xlsx', index=False)  # Replace with your file path
+df.to_excel('/home/tofi-machine/Documents/DataMining/DataMining/test_sample.xlsx', index=False)  # Replace with your file path
 log("Excel file updated")

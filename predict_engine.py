@@ -8,14 +8,8 @@ import joblib
 rf_classifier = joblib.load("/home/tofi-machine/Documents/DataMining/DataMining/trained_model.pkl")
 
 # Load the new dataset
-df = pd.read_excel("/home/tofi-machine/Documents/DataMining/DataMining/moviese.xlsx")
+df = pd.read_excel("/home/tofi-machine/Documents/DataMining/DataMining/test_sample.xlsx")
 
-# Data Cleaning and Feature Engineering - You need to perform these steps
-df['Domestic gross ($million)'] = df['Domestic gross ($million)'].replace(',', '', regex=True).astype(float)
-df['Domestic Gross'] = df['Domestic Gross'].replace(',', '', regex=True).astype(float) 
-df['Foreign Gross ($million)'] = df['Foreign Gross ($million)'].replace(',', '', regex=True).astype(float)
-df['Foreign Gross'] = df['Foreign Gross'].replace(',', '', regex=True).astype(float)           
-df['Worldwide Gross'] = df['Worldwide Gross'].replace(',', '', regex=True).astype(float)   
 
 # Apply the same transformations that were applied to the training data
 X_new = df.drop('one-hot encoding Oscar Winners', axis=1)

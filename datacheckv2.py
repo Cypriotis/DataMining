@@ -11,7 +11,7 @@ import os
 from datetime import datetime
 from sklearn.preprocessing import OneHotEncoder
 
-from datacheck  import standardize_text
+#from datacheck  import standardize_text
 
 # Function to load data from Excel file
 def load_data(file_path):
@@ -30,6 +30,20 @@ def log_datetime():
     reset_text_color = '\033[0m'
     print(f"{red_text}{formatted_datetime}{reset_text_color}")
 
+
+desired_formatting = 'titlecase'  # Replace with your desired formatting
+
+# Function to standardize text
+def standardize_text(text):
+    if desired_formatting == 'uppercase':
+        return text.group(0).upper()
+    elif desired_formatting == 'lowercase':
+        return text.group(0).lower()
+    elif desired_formatting == 'titlecase':
+        return text.group(0).title()
+    else:
+        return text.group(0)  # No formatting specified
+
 def convert_numeric(df):
     # Replace non-numeric values with NaN in 'Foreign Gross' and 'Worldwide Gross'
     df['Foreign Gross'] = pd.to_numeric(df['Foreign Gross'], errors='coerce')
@@ -45,7 +59,7 @@ def fill_missing_oscar_values(df):
     print("Columns before filling missing values:", df.columns)
 
     # If 'one-hot encoding Oscar Winners' column is present, no need to fill NaN values
-    # df['Oscar Winners'] = df['Oscar Winners'].fillna("not an Oscar winner")
+    #df['Script Type'] = df['Script Type'].fillna("")
 
     # Print the columns after filling missing values
     print("Columns after filling missing values:", df.columns)
@@ -72,9 +86,15 @@ def drop_irrelevant_columns(df, columns_to_delete):
 
 
 # Function to standardize text in the 'Oscar Winners' column
-def standardize_text_column(df, target_phrase, desired_formatting):
+def standardize_text_column(df):
+    # Define the phrase you want to find and standardize
+    target_phrase = 'oscar winner'  # Replace with the phrase you want to find
+
+    # Define the desired formatting (e.g., 'uppercase', 'lowercase', 'titlecase')
+
     # Convert the column to strings
     df['Oscar Winners'] = df['Oscar Winners'].astype(str)
+
     # Apply the standardization function to the column containing the target phrase
     df['Oscar Winners'] = df['Oscar Winners'].apply(lambda x: re.sub(target_phrase, standardize_text, x, flags=re.IGNORECASE))
     return df
@@ -112,26 +132,6 @@ def delete_rows_with_minus_symbol(df):
     df_clean = df.dropna()
     return df_clean
 
-def one_hot_encoding(df, column_name):
-    # Create an instance of OneHotEncoder
-    encoder = OneHotEncoder(sparse=False, drop='first')  # drop='first' removes one of the one-hot encoded columns to avoid multicollinearity
-
-    # Fit and transform the specified column
-    encoded_values = encoder.fit_transform(df[[column_name]])
-
-    # Create new column names for the one-hot encoded columns
-    new_columns = [f'{column_name}_{category}' for category in encoder.get_feature_names_out([column_name])]
-
-    # Create a DataFrame with the one-hot encoded columns
-    df_encoded = pd.DataFrame(encoded_values, columns=new_columns)
-
-    # Concatenate the original DataFrame and the one-hot encoded DataFrame
-    df = pd.concat([df, df_encoded], axis=1)
-
-    # Drop the original column
-    df = df.drop(columns=[column_name])
-
-    return df
 
 # Function to correct spelling in a given cell using SpellChecker
 def correct_spelling(cell_content, spell_checker):
@@ -146,6 +146,7 @@ def correct_spelling(cell_content, spell_checker):
 def apply_spell_checker(df, column_name):
     spell = SpellChecker()
     df[column_name] = df[column_name].apply(lambda x: correct_spelling(x, spell))
+    print("Spell checher success")
     return df
 
 # Function to remove anything after a comma in a specified column
@@ -154,10 +155,13 @@ def remove_after_comma(cell_content):
         return cell_content.split(',')[0]
     else:
         return cell_content
+    
 
 # Function to apply removing anything after a comma to a specified column
 def remove_text_after_comma(df, column_name):
     df[column_name] = df[column_name].apply(remove_after_comma)
+    print("removed commas")
+
     return df
 
 # Function to invert the values in a specified column
@@ -166,15 +170,35 @@ def invert_column_values(df, column_name_to_invert):
     return df
 
 # Function to apply random deletion based on a deletion probability to a specified column
-def random_deletion(df, column_name_to_invert, deletion_probability):
-    delete_mask = (df[column_name_to_invert] == 0)
-    df = df[~(delete_mask & (np.random.rand(len(df)) < deletion_probability))]
-    return df
+def random_deletion(df):
+    # Assuming 'df' is your DataFrame and 'column_name' is the column you want to check
+    text_to_remove = 'not Oscar Winners'
+    removal_percentage = 0.9  # Replace with the desired percentage
+
+    # Create a boolean mask for rows that contain the specified text (case-insensitive and substring check)
+    mask = df['Oscar Winners'].str.contains(text_to_remove, case=False, na=False)
+
+    # Identify the number of rows to remove based on the percentage
+    rows_to_remove = int(len(df) * removal_percentage)
+
+    # Get the indices of the rows to remove
+    indices_to_remove = df[mask].sample(rows_to_remove).index
+
+    # Remove the identified rows
+    df = df.drop(indices_to_remove)
+
+    # Reset the index if needed
+    df.reset_index(drop=True, inplace=True)
+    save_data(df, '/home/tofi-machine/Documents/DataMining/DataMining/movies.xlsx')
 
 # Function to drop irrelevant columns from PART3
 def drop_irrelevant_columns(df, columns_to_delete):
-    if all(col in df.columns for col in columns_to_delete):
-        df = df.drop(columns=columns_to_delete, axis=1)
+    # Check if the specified columns exist in the DataFrame
+    columns_exist = all(col in df.columns for col in columns_to_delete)
+
+    if columns_exist:
+        # Delete the specified columns
+        df = df.drop(columns=columns_to_delete)
     return df
 
 # Function to display basic information about the dataset
@@ -248,48 +272,79 @@ def plot_histogram(df, numeric_columns):
 def main():
     file_path = '/home/tofi-machine/Documents/DataMining/DataMining/movies.xlsx'
     save_folder = '/home/tofi-machine/Documents/DataMining/DataMining'
-    df = load_data(file_path)
+    df_cleaned = load_data(file_path)
+    print(df_cleaned.columns)
 
     log_datetime()
-    convert_numeric(df)
-    fill_missing_oscar_values(df)
-    drop_duplicates(df)
+    convert_numeric(df_cleaned)
+    fill_missing_oscar_values(df_cleaned)
+    drop_duplicates(df_cleaned)
+    df_cleaned['Oscar Winners'] = df_cleaned['Oscar Winners'].fillna('not Oscar Winners')
+    random_deletion(df_cleaned)
+    df_cleaned = load_data(file_path)
+    df_cleaned['Script Type'] = df_cleaned['Script Type'].fillna('not specified')
 
-    columns_to_delete_part1 = ['Film', 'Rotten Tomatoes vs Metacritic  deviance', 'Opening Weekend',
+
+
+
+
+    columns_to_delete_part1 = ['ID', 'Film', 'Rotten Tomatoes vs Metacritic  deviance', 'Primary Genre', 'Opening Weekend',
                                 'Opening weekend ($million)', ' Budget recovered', ' Budget recovered opening weekend']
-    drop_irrelevant_columns(df, columns_to_delete_part1)
+    columns_to_delete_part2 = [' of Gross earned abroad','Release Date (US)']
+    # Check if the specified columns exist in the DataFrame
+    columns_exist = all(col in df_cleaned.columns for col in columns_to_delete_part1)
 
-    target_phrase = 'oscar winner'
-    desired_formatting = 'titlecase'
-    standardize_text_column(df, target_phrase, desired_formatting)
+    if columns_exist:
+        # Delete the specified columns
+        df_cleaned = df_cleaned.drop(columns=columns_to_delete_part1)
+        df_cleaned = df_cleaned.drop(columns=columns_to_delete_part2)
 
-    columns_to_delete_part2 = calculate_missing_percent(df)[calculate_missing_percent(df) > 2.5].index
-    delete_columns_with_missing_values(df, columns_to_delete_part2)
+    standardize_text_column(df_cleaned)
 
-    df_cleaned = drop_rows_with_empty_cells(df)
+    columns_to_delete_part2 = calculate_missing_percent(df_cleaned)[calculate_missing_percent(df_cleaned) > 2.5].index
+    delete_columns_with_missing_values(df_cleaned, columns_to_delete_part2)
+
+    df_cleaned = drop_rows_with_empty_cells(df_cleaned)
 
     save_data(df_cleaned, file_path)
     df_cleaned = load_data(file_path)
 
-    print("Columns with more than 2.5% missing values:")
-    print(calculate_missing_percent(df_cleaned)[calculate_missing_percent(df_cleaned) > 2.5])
 
     numeric_columns = df_cleaned.select_dtypes(include='number').columns
     check_min_value_zero(df_cleaned, numeric_columns)
 
     df_clean = delete_rows_with_minus_symbol(df_cleaned)
 
+    save_data(df_cleaned, file_path)
+    df_clean = load_data(file_path)
+
     column_name_to_encode = 'Script Type'
-    one_hot_encoding(df_clean, column_name_to_encode)
+    enc = preprocessing.OrdinalEncoder()
+    enc.fit(df_clean[["Script Type"]]) 
+    df_clean['one-hot encoding Script Type']=enc.transform(df_clean[["Script Type"]])
+    df_clean.drop(columns=['Script Type'], inplace=True)
+
 
     apply_spell_checker(df_clean, 'Genre')
     remove_text_after_comma(df_clean, 'Genre')
-    one_hot_encoding(df_clean, 'Genre')
-    one_hot_encoding(df_clean, 'Oscar Winners')
+
+    enc = preprocessing.OrdinalEncoder()
+    enc.fit(df_clean[["Genre"]]) 
+    df_clean['one-hot encoding Genre']=enc.transform(df_clean[["Genre"]])
+    df_clean.drop(columns=['Genre'], inplace=True)
+
+
+    enc = preprocessing.OrdinalEncoder()
+    enc.fit(df_clean[["Oscar Winners"]]) 
+    df_clean['one-hot encoding Oscar Winners']=enc.transform(df_clean[["Oscar Winners"]])
+    df_clean.drop(columns=['Oscar Winners'], inplace=True)
+    save_data(df_clean, file_path)
+
 
     column_name_to_invert = 'one-hot encoding Oscar Winners'
     invert_column_values(df_clean, column_name_to_invert)
-    random_deletion(df_clean, column_name_to_invert, 0.90)
+    
+
 
     columns_to_delete_part3 = ['Genre', 'Script Type', 'Release Date (US)', ' of Gross earned abroad']
     drop_irrelevant_columns(df_clean, columns_to_delete_part3)
@@ -300,13 +355,16 @@ def main():
     display_basic_info(df_clean)
     analyze_oscar_winners(df_clean)
     save_pie_chart(df_clean, save_folder, len(df_clean))
-    plot_correlation_heatmap(df_clean)
-    plot_pairplot(df_clean)
-    plot_countplot(df_clean)
-    plot_histogram(df_clean, numeric_columns)
+    #plot_correlation_heatmap(df_clean)
+    #plot_pairplot(df_clean)
+    #plot_countplot(df_clean)
+    #plot_histogram(df_clean, numeric_columns)
 
     print("Updated DataFrame after deleting rows:")
     print(df_clean)
 
     save_data(df_clean, file_path)
     print("Excel file updated")
+
+if __name__ == "__main__":
+    main()

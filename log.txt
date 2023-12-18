@@ -2600,3 +2600,104 @@ IMDb Rating: 100.00%
 IMDB vs RT disparity: 100.00%
 Oscar Detail: 96.04%
 Excel file updated
+[91m2023-12-18 15:54:56[0m
+[91m2023-12-18 15:55:54[0m
+[91m2023-12-18 15:58:31[0m
+[91m2023-12-18 15:59:40[0m
+[91m2023-12-18 16:00:39[0m
+[91m2023-12-18 16:01:38[0m
+Duplicate rows in the 'Film' column:
+                   Film  Year            Script Type  ...  Release Date (US)        Oscar Winners                  Oscar Detail
+681       That's My Boy  2012    original screenplay  ...       Jun 15, 2012  not an Oscar winner                           NaN
+682       That's My Boy  2012    original screenplay  ...       Jun 15, 2012  not an Oscar winner                           NaN
+703         Big Miracle  2012             adaptation  ...        Feb 3, 2012  not an Oscar winner                           NaN
+704         Big Miracle  2012             adaptation  ...        Feb 3, 2012  not an Oscar winner                           NaN
+709        Premium Rush  2012    original screenplay  ...       Aug 24, 2012  not an Oscar winner                           NaN
+710        Premium Rush  2012    original screenplay  ...       Aug 24, 2012  not an Oscar winner                           NaN
+713          The Master  2012    original screenplay  ...       Sep 21, 2012  not an Oscar winner                           NaN
+714          The Master  2012    original screenplay  ...       Sep 21, 2012  not an Oscar winner                           NaN
+1001  The Good Dinosaur  2015    original screenplay  ...       Nov 25, 2015  not an Oscar winner                           NaN
+1062      The Big Short  2015             adaptation  ...  December 11, 2015  not an Oscar winner                           NaN
+1135  The Good Dinosaur  2016    original screenplay  ...       Nov 25, 2015  not an Oscar winner                           NaN
+1168      The Big Short  2016  based on a true story  ...       Dec 23, 2015         Oscar Winner  Writing (adapted screenplay)
+
+[12 rows x 31 columns]
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+Columns with more than 2.5% missing values:
+Primary Genre: 98.63%
+Distributor: 100.00%
+IMDb Rating: 100.00%
+IMDB vs RT disparity: 100.00%
+Oscar Detail: 96.04%
+Excel file updated
+[91m2023-12-18 16:02:23[0m
+[91m2023-12-18 16:04:25[0m
+[91m2023-12-18 16:07:05[0m
+Duplicate rows in the 'Film' column:
+    ID Film  Year            Script Type  ...  IMDb Rating IMDB vs RT disparity   Release Date (US)  Oscar Winners
+0    1  ???  2019    original screenplay  ...          6.5                 15.0     October 2, 2019              0
+1    2  ???  2022                    NaN  ...          4.9                 35.0                 NaN              0
+2    3  ???  2019                 sequel  ...          6.4                 30.0       June 14, 2019              0
+3    4  ???  2022                    NaN  ...          6.7                  6.0                 NaN  Oscar Winners
+4    5  ???  2018                 remake  ...          NaN                  NaN         May 4, 2018              0
+5    6  ???  2021                    NaN  ...          5.9                 35.0   November 10, 2021              0
+6    7  ???  2019    original screenplay  ...          5.5                -17.0       June 14, 2019              0
+7    8  ???  2021                    NaN  ...          6.3                 28.0      March 31, 2021              0
+8    9  ???  2019    original screenplay  ...          5.5                -23.0      March 29, 2019  Oscar Winners
+9   10  ???  2019                 sequel  ...          5.6                 10.0        Jun 14, 2019              0
+10  11  ???  2018             adaptation  ...          NaN                  NaN  September 21, 2018              0
+11  12  ???  2021                    NaN  ...          6.9                 25.0       June 11, 2021              0
+12  13  ???  2021                    NaN  ...          7.3                 21.0       June 11, 2021              0
+13  14  ???  2019    original screenplay  ...          6.0                 11.0        Oct 11, 2019              0
+14  15  ???  2021                    NaN  ...          5.2                 13.0   November 24, 2021              0
+15  16  ???  2018                 sequel  ...          NaN                  NaN         Jul 6, 2018              0
+16  17  ???  2018             adaptation  ...          NaN                  NaN    February 9, 2018              0
+17  18  ???  2022                    NaN  ...          7.4                 23.0                 NaN              0
+18  19  ???  2021                    NaN  ...          7.1                 27.0   December 25, 2021  Oscar Winners
+19  20  ???  2018                 sequel  ...          NaN                  NaN   November 21, 2018              0
+20  21  ???  2022                    NaN  ...          6.1                 19.0                 NaN              0
+21  22  ???  2018                 remake  ...          NaN                  NaN        Mar 23, 2018              0
+22  23  ???  2022                    NaN  ...          6.8                 18.0                 NaN              0
+23  24  ???  2020    original screenplay  ...          6.3                 17.0        Nov 13, 2020              0
+24  25  ???  2022                    NaN  ...          2.5                -17.0                 NaN              0
+25  26  ???  2020    original screenplay  ...          6.1                 20.0         Dec 4, 2020              0
+26  27  ???  2019    original screenplay  ...          7.6                 20.0      August 9, 2019              0
+27  28  ???  2019    original screenplay  ...          6.5                 12.0         Jun 7, 2019  Oscar Winners
+28  29  ???  2021                    NaN  ...          6.2                 27.0       June 11, 2021              0
+29  30  ???  2022                    NaN  ...          6.1                  1.0                 NaN              0
+30  31  ???  2018  based on a true story  ...          NaN                  NaN   December 25, 2018              0
+31  32  ???  2021                    NaN  ...          6.3                 -4.0     October 1, 2021              0
+32  33  ???  2018                 sequel  ...          NaN                  NaN        Jul 20, 2018              0
+33  34  ???  2018    original screenplay  ...          NaN                  NaN         Nov 2, 2018              0
+34  35  ???  2019    original screenplay  ...          5.2                -12.0      April 19, 2019              0
+35  36  ???  2018    original screenplay  ...          NaN                  NaN        May 18, 2018              0
+36  37  ???  2019             adaptation  ...          7.5                 21.0      August 9, 2019  Oscar Winners
+37  38  ???  2022                    NaN  ...          8.3                 13.0                 NaN              0
+38  39  ???  2019                 sequel  ...          6.0                 23.0        May 31, 2019              0
+39  40  ???  2018  based on a true story  ...          NaN                  NaN        Aug 10, 2018              0
+40  41  ???  2019                 remake  ...          5.0                 29.0        Nov 15, 2019              0
+41  42  ???  2020    original screenplay  ...          5.4                 34.0        Dec 18, 2020              0
+42  43  ???  2020             adaptation  ...          6.8                 21.0        Dec 25, 2020              0
+43  44  ???  2018  based on a true story  ...          NaN                  NaN        Nov 16, 2018              0
+44  45  ???  2018                 sequel  ...          NaN                  NaN    January 12, 2018              0
+45  46  ???  2018    original screenplay  ...          NaN                  NaN        Jul 20, 2018              0
+46  47  ???  2018                 sequel  ...          NaN                  NaN   September 7, 2018              0
+47  48  ???  2022                    NaN  ...          6.3                 19.0                 NaN  Oscar Winners
+48  49  ???  2019             adaptation  ...          8.4                  6.0        Apr 26, 2019              0
+49  50  ???  2019             adaptation  ...          7.0                 20.0       April 5, 2019              0
+
+[50 rows x 31 columns]
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+No columns with more than 2.5% missing values.
+[91m2023-12-18 16:09:16[0m
+No duplicates found in the 'Film' column.
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+No columns with more than 2.5% missing values.
+[91m2023-12-18 16:10:06[0m
+No duplicates found in the 'Film' column.
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+No columns with more than 2.5% missing values.
+[91m2023-12-18 16:10:46[0m
+No duplicates found in the 'Film' column.
+Duplicate rows in the 'Film' column have been dropped, and the DataFrame has been saved to the Excel file.
+No columns with more than 2.5% missing values.
