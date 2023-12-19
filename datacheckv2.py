@@ -44,14 +44,49 @@ def standardize_text(text):
     else:
         return text.group(0)  # No formatting specified
 
-def convert_numeric(df):
-    # Replace non-numeric values with NaN in 'Foreign Gross' and 'Worldwide Gross'
-    df['Foreign Gross'] = pd.to_numeric(df['Foreign Gross'], errors='coerce')
-    df['Worldwide Gross'] = pd.to_numeric(df['Worldwide Gross'], errors='coerce')
+def clean_and_convert_to_numeric(value):
+    if isinstance(value, (int, float)):
+        # If the value is already numeric, return it
+        return value
+    elif isinstance(value, str):
+        # If the value is a string and not '-', remove commas and convert to float
+        if value != '-':
+            return float(value.replace(',', ''))
+        else:
+            return pd.NaT  # Replace '-' with NaN
+    else:
+        # For other types, return NaN or handle as appropriate
+        return pd.NaT  # Use pd.NaT for missing/undefined values
+def convert_columns_to_numeric(df, columns_to_convert):
+    """
+    Convert specified columns in the DataFrame to integer.
 
-    # Convert the columns to numeric
-    df['Foreign Gross'] = pd.to_numeric(df['Foreign Gross'])
-    df['Worldwide Gross'] = pd.to_numeric(df['Worldwide Gross'])
+    Parameters:
+    - df (pd.DataFrame): DataFrame.
+    - columns_to_convert (list): List of column names to convert to integer.
+
+    Returns:
+    - df_integer (pd.DataFrame): DataFrame with the specified columns converted to integer.
+    """
+    # Reset index of df
+    df = df.reset_index(drop=True)
+    try:
+        # Check if all specified columns exist in the DataFrame
+        missing_columns = [col for col in columns_to_convert if col not in df.columns]
+        if missing_columns:
+            print(f"Columns not found in the DataFrame: {missing_columns}")
+            return None
+
+        # Use apply with a lambda function to convert each element to numeric for specified columns
+        for column_name in columns_to_convert:
+            # Convert to numeric and handle NaN values
+            df[column_name] = df[column_name].apply(lambda x: round(pd.to_numeric(str(x).replace(',', '.'), errors='coerce')) if pd.notna(x) else x)
+
+        return df
+    except Exception as e:
+        print(f"Error converting columns to integer: {e}")
+        return None
+
 
 # Function to fill missing values in the 'Oscar Winners' column
 def fill_missing_oscar_values(df):
@@ -201,6 +236,55 @@ def drop_irrelevant_columns(df, columns_to_delete):
         df = df.drop(columns=columns_to_delete)
     return df
 
+def detect_and_drop_minus_rows(df):
+    # Function to check if a cell contains only the '-' symbol
+    def contains_only_minus(cell):
+        return str(cell).strip() == '-'
+
+    # Apply the function to each row
+    rows_to_drop = df.apply(lambda row: all(contains_only_minus(cell) for cell in row), axis=1)
+
+    # Drop the rows where all cells contain only the '-' symbol
+    df_cleaned = df[~rows_to_drop]
+
+    # Reset the index
+    df_cleaned.reset_index(drop=True, inplace=True)
+
+    return df_cleaned
+
+def detect_and_drop_nan_rows(df):
+    """
+    Detect and drop rows with NaN values.
+
+    Parameters:
+    - df (pd.DataFrame): DataFrame.
+
+    Returns:
+    - df_cleaned (pd.DataFrame): DataFrame with rows containing NaN values removed.
+    """
+    # Detect rows with NaN values
+    rows_with_nan = df[df.isnull().any(axis=1)]
+
+    if not rows_with_nan.empty:
+        print("Rows with NaN values detected:")
+        print(rows_with_nan)
+
+        # Drop rows with NaN values
+        df_cleaned = df.dropna()
+
+        # Reset the index
+        df_cleaned.reset_index(drop=True, inplace=True)
+
+        print("Rows with NaN values have been dropped.")
+    else:
+        print("No rows with NaN values found.")
+        df_cleaned = df.copy()
+
+    #reset df index
+    df_cleaned.reset_index(drop=True, inplace=True)
+
+    return df_cleaned
+
 # Function to display basic information about the dataset
 def display_basic_info(df):
     print("Number of rows and columns:", df.shape)
@@ -273,98 +357,10 @@ def main():
     file_path = '/home/tofi-machine/Documents/DataMining/DataMining/movies.xlsx'
     save_folder = '/home/tofi-machine/Documents/DataMining/DataMining'
     df_cleaned = load_data(file_path)
-    print(df_cleaned.columns)
-
     log_datetime()
-    convert_numeric(df_cleaned)
-    fill_missing_oscar_values(df_cleaned)
-    drop_duplicates(df_cleaned)
-    df_cleaned['Oscar Winners'] = df_cleaned['Oscar Winners'].fillna('not Oscar Winners')
-    random_deletion(df_cleaned)
-    df_cleaned = load_data(file_path)
-    df_cleaned['Script Type'] = df_cleaned['Script Type'].fillna('not specified')
 
-
-
-
-
-    columns_to_delete_part1 = ['ID', 'Film', 'Rotten Tomatoes vs Metacritic  deviance', 'Primary Genre', 'Opening Weekend',
-                                'Opening weekend ($million)', ' Budget recovered', ' Budget recovered opening weekend']
-    columns_to_delete_part2 = [' of Gross earned abroad','Release Date (US)']
-    # Check if the specified columns exist in the DataFrame
-    columns_exist = all(col in df_cleaned.columns for col in columns_to_delete_part1)
-
-    if columns_exist:
-        # Delete the specified columns
-        df_cleaned = df_cleaned.drop(columns=columns_to_delete_part1)
-        df_cleaned = df_cleaned.drop(columns=columns_to_delete_part2)
-
-    standardize_text_column(df_cleaned)
-
-    columns_to_delete_part2 = calculate_missing_percent(df_cleaned)[calculate_missing_percent(df_cleaned) > 2.5].index
-    delete_columns_with_missing_values(df_cleaned, columns_to_delete_part2)
-
-    df_cleaned = drop_rows_with_empty_cells(df_cleaned)
-
-    save_data(df_cleaned, file_path)
-    df_cleaned = load_data(file_path)
-
-
-    numeric_columns = df_cleaned.select_dtypes(include='number').columns
-    check_min_value_zero(df_cleaned, numeric_columns)
-
-    df_clean = delete_rows_with_minus_symbol(df_cleaned)
-
-    save_data(df_cleaned, file_path)
-    df_clean = load_data(file_path)
-
-    column_name_to_encode = 'Script Type'
-    enc = preprocessing.OrdinalEncoder()
-    enc.fit(df_clean[["Script Type"]]) 
-    df_clean['one-hot encoding Script Type']=enc.transform(df_clean[["Script Type"]])
-    df_clean.drop(columns=['Script Type'], inplace=True)
-
-
-    apply_spell_checker(df_clean, 'Genre')
-    remove_text_after_comma(df_clean, 'Genre')
-
-    enc = preprocessing.OrdinalEncoder()
-    enc.fit(df_clean[["Genre"]]) 
-    df_clean['one-hot encoding Genre']=enc.transform(df_clean[["Genre"]])
-    df_clean.drop(columns=['Genre'], inplace=True)
-
-
-    enc = preprocessing.OrdinalEncoder()
-    enc.fit(df_clean[["Oscar Winners"]]) 
-    df_clean['one-hot encoding Oscar Winners']=enc.transform(df_clean[["Oscar Winners"]])
-    df_clean.drop(columns=['Oscar Winners'], inplace=True)
-    save_data(df_clean, file_path)
-
-
-    column_name_to_invert = 'one-hot encoding Oscar Winners'
-    invert_column_values(df_clean, column_name_to_invert)
     
-
-
-    columns_to_delete_part3 = ['Genre', 'Script Type', 'Release Date (US)', ' of Gross earned abroad']
-    drop_irrelevant_columns(df_clean, columns_to_delete_part3)
-
-    save_data(df_clean, file_path)
-    df_clean = load_data(file_path)
-
-    display_basic_info(df_clean)
-    analyze_oscar_winners(df_clean)
-    save_pie_chart(df_clean, save_folder, len(df_clean))
-    #plot_correlation_heatmap(df_clean)
-    #plot_pairplot(df_clean)
-    #plot_countplot(df_clean)
-    #plot_histogram(df_clean, numeric_columns)
-
-    print("Updated DataFrame after deleting rows:")
-    print(df_clean)
-
-    save_data(df_clean, file_path)
-    print("Excel file updated")
+    
 
 if __name__ == "__main__":
     main()
