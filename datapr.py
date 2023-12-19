@@ -174,7 +174,7 @@ def onehot_enc(df):
 
     return df
 
-def balance_data(df, column_name, threshold=0.91, random_seed=None):
+def balance_data(df, column_name, threshold=0.93, random_seed=None):
     # Set random seed if provided
     if random_seed is not None:
         np.random.seed(random_seed)
@@ -198,6 +198,10 @@ def balance_data(df, column_name, threshold=0.91, random_seed=None):
     return df
 
 
+def drop_script(df):
+    # Drop rows where the 'Script Type' column has empty cells
+    df = df.dropna(subset=['Script Type'])
+    return df
 
 
 
@@ -209,12 +213,19 @@ def main():
     df = load_data(file_path)
     log_datetime()
 
+
+
+    #Only for the second sample data // keep commented otherwise
+    #Drop any rows that are empty cells
+    #df = drop_script(df)
+
     #Drop Duplicate Values
     df = drop_duplicates(df)
 
     #Drop irrelevant Columns
     df = drop_columns(df)
 
+    #Only for main sample // keep commented otherwise
     #Fill nan Oscar Winners column cells with not
     df = fill_oscar(df)
 
@@ -239,7 +250,8 @@ def main():
     #Drop any rows with empty cells
     df = drop_empty(df)
 
-    #standarise text on a column to titlecase
+    #Only for main sample // keep commented otherwise
+    #standarise text on a column to titlecase oscar winners
     df = standardize(df)
 
 
@@ -248,6 +260,7 @@ def main():
 
     #Apply spell checker to a specified column
     df = apply_spell_checker(df, 'Genre')
+    
 
     #Apply one hot encoder to a specified columns
     df = onehot_enc(df)
