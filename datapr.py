@@ -69,8 +69,11 @@ import pandas as pd
 def convert_non_numeric_columns(df):
     # Specify the columns to convert to numeric
     columns_to_convert = [
+        'Domestic Gross',
         'Domestic gross ($million)',
+        'Foreign Gross',
         'Foreign Gross ($million)',
+        'Worldwide Gross',
         'Worldwide Gross ($million)',
         'Budget ($million)'
     ]
@@ -118,7 +121,7 @@ def standardize(df):
 
 # Function to correct spelling in a given cell using SpellChecker
 def correct_spelling(cell_content, spell_checker):
-    if pd.notna(cell_content):
+    if pd.notna(cell_content) and isinstance(cell_content, str) and ',' in cell_content:
         words = [word.strip() for word in cell_content.split(',')]
         corrected_words = [spell_checker.correction(word) if spell_checker.correction(word) else word for word in words]
         return ', '.join(corrected_words)
@@ -146,10 +149,71 @@ def remove_after_comma(cell_content):
 def remove_text_after_comma(df, column_name):
     df[column_name] = df[column_name].apply(remove_after_comma)
     print("removed commas")
-    return df  # Add this line to return the modified DataFrame
+    return df 
     
+def onehot_enc(df):
+    enc = preprocessing.OrdinalEncoder()
 
+    # Convert any non-string values in 'Genre' to strings
+    df['Genre'] = df['Genre'].astype(str)
 
+    # Fit and transform 'Script Type' column
+    enc.fit(df[["Script Type"]]) 
+    df['one-hot encoding Script Type'] = enc.transform(df[["Script Type"]])
+
+    # Fit and transform 'Genre' column
+    enc.fit(df[["Genre"]]) 
+    df['one-hot encoding Genre'] = enc.transform(df[["Genre"]])
+
+    # Fit and transform 'Oscar Winners' column
+    enc.fit(df[["Oscar Winners"]]) 
+    df['one-hot encoding Oscar Winners'] = enc.transform(df[["Oscar Winners"]])
+
+    # Drop the original columns
+    df.drop(columns=['Script Type', 'Genre', 'Oscar Winners'], inplace=True)
+
+    return df
+
+def balance_data(df, column_name, threshold=0.91, random_seed=None):
+    """
+    Balance the data by deleting rows with zeros in a specific column with a certain probability.
+
+    Parameters:
+    - df: pandas DataFrame
+        The input DataFrame.
+    - column_name: str
+        The name of the column to check for zeros.
+    - threshold: float, optional (default=0.7)
+        The threshold probability for deleting rows. Rows with zeros in the specified column will be deleted
+        with this probability.
+    - random_seed: int or None, optional (default=None)
+        Random seed for reproducibility.
+
+    Returns:
+    - balanced_df: pandas DataFrame
+        The balanced DataFrame after removing rows.
+    """
+    # Set random seed if provided
+    if random_seed is not None:
+        np.random.seed(random_seed)
+
+    # Create a mask for rows with zeros in the specified column
+    zero_rows_mask = (df[column_name] == 0)
+
+    # Generate a random mask based on the threshold probability
+    delete_rows_mask = np.random.rand(len(df)) < threshold
+
+    # Combine the masks to identify rows to delete
+    rows_to_delete = zero_rows_mask & delete_rows_mask
+
+    # Drop the identified rows
+    balanced_df = df[~rows_to_delete]
+
+    print(f"Rows deleted with a probability of {threshold}: {len(df) - len(balanced_df)}")
+
+    df = balanced_df
+
+    return df
 
 
 
@@ -199,6 +263,15 @@ def main():
 
     #Remove text after comma
     df = remove_text_after_comma(df, 'Genre')
+
+    #Apply spell checker to a specified column
+    df = apply_spell_checker(df, 'Genre')
+
+    #Apply one hot encoder to a specified columns
+    df = onehot_enc(df)
+
+    #check if the column 'one-hot encoding Oscar Winners' value is 0 and if yes, give a 70% prob to delete the row
+    df = balance_data(df, 'one-hot encoding Oscar Winners')
 
 
     
