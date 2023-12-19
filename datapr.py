@@ -175,24 +175,6 @@ def onehot_enc(df):
     return df
 
 def balance_data(df, column_name, threshold=0.91, random_seed=None):
-    """
-    Balance the data by deleting rows with zeros in a specific column with a certain probability.
-
-    Parameters:
-    - df: pandas DataFrame
-        The input DataFrame.
-    - column_name: str
-        The name of the column to check for zeros.
-    - threshold: float, optional (default=0.7)
-        The threshold probability for deleting rows. Rows with zeros in the specified column will be deleted
-        with this probability.
-    - random_seed: int or None, optional (default=None)
-        Random seed for reproducibility.
-
-    Returns:
-    - balanced_df: pandas DataFrame
-        The balanced DataFrame after removing rows.
-    """
     # Set random seed if provided
     if random_seed is not None:
         np.random.seed(random_seed)
