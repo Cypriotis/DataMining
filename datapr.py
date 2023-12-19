@@ -132,11 +132,21 @@ def apply_spell_checker(df, column_name):
     print("Spell checher success")
     return df
 
+# Function to remove anything after a comma in a specified column
 def remove_after_comma(cell_content):
     if pd.notna(cell_content):
-        return cell_content.split(',')[0]
+        # Check the data type before splitting
+        if isinstance(cell_content, str):
+            return cell_content.split(',')[0]
+        else:
+            return cell_content
     else:
         return cell_content
+
+def remove_text_after_comma(df, column_name):
+    df[column_name] = df[column_name].apply(remove_after_comma)
+    print("removed commas")
+    return df  # Add this line to return the modified DataFrame
     
 
 
@@ -186,8 +196,9 @@ def main():
     #standarise text on a column to titlecase
     df = standardize(df)
 
-    #Remove text after comma of column Genre to keep 1 main word
-    df = apply_spell_checker(df, 'Genre')
+
+    #Remove text after comma
+    df = remove_text_after_comma(df, 'Genre')
 
 
     
