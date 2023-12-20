@@ -43,7 +43,7 @@ def drop_duplicates(df):
 
 def drop_columns(df):
     list_of_columns_to_delete  = ['Film', 'Rotten Tomatoes vs Metacritic  deviance', 'Primary Genre', 'Opening Weekend',
-                                'Opening weekend ($million)', ' Budget recovered', ' Budget recovered opening weekend',' of Gross earned abroad','Release Date (US)', 'Distributor', 'Oscar Detail']
+                                'Opening weekend ($million)', ' Budget recovered', ' Budget recovered opening weekend',' of Gross earned abroad','Release Date (US)', 'Distributor','Oscar Detail']
     columns_exist = all(col in df.columns for col in list_of_columns_to_delete)
 
     if columns_exist:
@@ -174,6 +174,29 @@ def onehot_enc(df):
 
     return df
 
+def onehot_enc_nonOscar(df):
+    enc = preprocessing.OrdinalEncoder()
+
+    # Convert any non-string values in 'Genre' to strings
+    df['Genre'] = df['Genre'].astype(str)
+
+    # Fit and transform 'Script Type' column
+    enc.fit(df[["Script Type"]]) 
+    df['one-hot encoding Script Type'] = enc.transform(df[["Script Type"]])
+
+    # Fit and transform 'Genre' column
+    enc.fit(df[["Genre"]]) 
+    df['one-hot encoding Genre'] = enc.transform(df[["Genre"]])
+
+
+    # Drop the original columns
+    df.drop(columns=['Script Type', 'Genre'], inplace=True)
+
+    return df
+
+    
+
+
 def balance_data(df, column_name, threshold=0.93, random_seed=None):
     # Set random seed if provided
     if random_seed is not None:
@@ -213,17 +236,21 @@ def main():
     df = load_data(file_path)
     log_datetime()
 
-
-
     #Only for the second sample data // keep commented otherwise
     #Drop any rows that are empty cells
     #df = drop_script(df)
+    #df.reset_index(drop=True, inplace=True)
 
+    
     #Drop Duplicate Values
     df = drop_duplicates(df)
 
     #Drop irrelevant Columns
     df = drop_columns(df)
+
+    
+
+
 
     #Only for main sample // keep commented otherwise
     #Fill nan Oscar Winners column cells with not
@@ -264,6 +291,10 @@ def main():
 
     #Apply one hot encoder to a specified columns
     df = onehot_enc(df)
+    
+
+    #Apply one hot encoder to a specified columns ( - Oscar Winners)
+    #df = onehot_enc_nonOscar(df)
 
     #check if the column 'one-hot encoding Oscar Winners' value is 0 and if yes, give a 70% prob to delete the row
     df = balance_data(df, 'one-hot encoding Oscar Winners')
