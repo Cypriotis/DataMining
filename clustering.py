@@ -39,7 +39,7 @@ plt.ylabel('Inertia')
 plt.show()
 
 # Based on the Elbow Method, choose the optimal number of clusters
-k_optimal = 2  # Adjust based on the plot
+k_optimal = 3  # Adjust based on the plot
 
 # Apply K-Means clustering
 kmeans = KMeans(n_clusters=k_optimal, random_state=42)
