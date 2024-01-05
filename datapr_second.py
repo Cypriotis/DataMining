@@ -42,7 +42,7 @@ def drop_duplicates(df):
     return df
 
 def drop_columns(df):
-    list_of_columns_to_delete  = ['ID', 'Film', 'Rotten Tomatoes vs Metacritic  deviance', 'Primary Genre', 'Opening Weekend',
+    list_of_columns_to_delete  = ['Film', 'Rotten Tomatoes vs Metacritic  deviance', 'Primary Genre', 'Opening Weekend',
                                 'Opening weekend ($million)', ' Budget recovered', ' Budget recovered opening weekend',' of Gross earned abroad','Release Date (US)', 'Distributor']
     columns_exist = all(col in df.columns for col in list_of_columns_to_delete)
 
@@ -239,7 +239,7 @@ def fill_script(df):
 
 # Main function to execute the entire data processing pipeline
 def main():
-    file_path = '/home/tofi-machine/Documents/DataMining/DataMining/test_sample.xlsx'
+    file_path = '/home/tofi-machine/Documents/DataMining/DataMining/main.xlsx'
     save_folder = '/home/tofi-machine/Documents/DataMining/DataMining'
     df = load_data(file_path)
     log_datetime()
