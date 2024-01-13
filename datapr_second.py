@@ -40,16 +40,16 @@ def drop_duplicates(df):
     else:
         print("No duplicates found in the 'Film' column.")
     return df
-
 def drop_columns(df):
     list_of_columns_to_delete  = ['Film', 'Rotten Tomatoes vs Metacritic  deviance', 'Primary Genre', 'Opening Weekend',
-                                'Opening weekend ($million)', ' Budget recovered', ' Budget recovered opening weekend',' of Gross earned abroad','Release Date (US)', 'Distributor']
+                                'Opening weekend ($million)', ' Budget recovered', ' Budget recovered opening weekend',' of Gross earned abroad','Release Date (US)', 'Distributor','Oscar Detail']
     columns_exist = all(col in df.columns for col in list_of_columns_to_delete)
 
     if columns_exist:
         # Delete the specified columns
         df = df.drop(columns=list_of_columns_to_delete, axis=1)
     return df
+
 
 def fill_oscar(df):
     df['Oscar Winners'] = df['Oscar Winners'].fillna('not')
@@ -157,6 +157,11 @@ def remove_text_after_comma(df, column_name):
     df[column_name] = df[column_name].apply(remove_after_comma)
     print("removed commas")
     return df 
+
+def standardize(df):
+    #standardize text on a column to titlecase
+    df['Oscar Winners'] = df['Oscar Winners'].str.title()
+    return df
     
 def onehot_enc(df):
     enc = preprocessing.OrdinalEncoder()
@@ -195,11 +200,14 @@ def onehot_enc_nonOscar(df):
     enc.fit(df[["Genre"]]) 
     df['one-hot encoding Genre'] = enc.transform(df[["Genre"]])
 
+    # Create a new column 'one-hot encoding Oscar Winners' based on conditions
+    df['one-hot encoding Oscar Winners'] = df['Oscar Winners'].fillna('').apply(lambda x: 1 if 'Oscar Winner' in x else 0)
 
     # Drop the original columns
-    df.drop(columns=['Script Type', 'Genre'], inplace=True)
+    df.drop(columns=['Script Type', 'Genre', 'Oscar Winners'], inplace=True)
 
     return df
+
 
     
 
@@ -239,7 +247,7 @@ def fill_script(df):
 
 # Main function to execute the entire data processing pipeline
 def main():
-    file_path = '/home/tofi-machine/Documents/DataMining/DataMining/main.xlsx'
+    file_path = '/home/tofi-machine/Documents/DataMining/DataMining/movies.xlsx'
     save_folder = '/home/tofi-machine/Documents/DataMining/DataMining'
     df = load_data(file_path)
     log_datetime()
@@ -262,6 +270,9 @@ def main():
     #Fill nan cells with 0   //I will try to drop the rows instead, based on the prediction results
     df = fill_nan(df)
 
+    df = standardize(df)
+
+
     #reset index of df
     df.reset_index(drop=True, inplace=True)
 
@@ -282,8 +293,6 @@ def main():
     
     #Apply one hot encoder to a specified columns ( - Oscar Winners)
     df = onehot_enc_nonOscar(df)
-
-    df['one-hot encoding Oscar Winners'] = None
 
     save_data(df, file_path)
     print("Excel file updated")
