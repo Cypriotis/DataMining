@@ -50,6 +50,23 @@ def drop_columns(df):
         df = df.drop(columns=list_of_columns_to_delete, axis=1)
     return df
 
+def drop_columns_second(df):
+    list_of_columns_to_delete  = ['ID','Film', 'Rotten Tomatoes vs Metacritic  deviance', 'Primary Genre', 'Opening Weekend',
+                                'Opening weekend ($million)', ' Budget recovered', ' Budget recovered opening weekend',' of Gross earned abroad', 'Distributor','Release Date (US)',]
+    columns_exist = all(col in df.columns for col in list_of_columns_to_delete)
+
+    if columns_exist:
+        # Delete the specified columns
+        df = df.drop(columns=list_of_columns_to_delete, axis=1)
+    return df
+
+def duplicate_oscar_winners(df):
+    # Filter rows where 'Oscar Winners' indicates a win
+    oscar_winners = df[df['Oscar Winners'].str.contains('Oscar Winner', na=False)]
+    
+    # Concatenate these rows to the DataFrame
+    df = pd.concat([df, oscar_winners], ignore_index=True)
+    return df
 
 def fill_oscar(df):
     df['Oscar Winners'] = df['Oscar Winners'].fillna('not')
@@ -119,11 +136,6 @@ def replace_hyphen_with_zero(df):
 def drop_empty(df):
     #drop nan or empty cells in dataframe df
     df = df.dropna()
-    return df
-
-def standardize(df):
-    #standardize text on a column to titlecase
-    df['Oscar Winners'] = df['Oscar Winners'].str.title()
     return df
 
 # Function to correct spelling in a given cell using SpellChecker
@@ -242,7 +254,20 @@ def fill_script(df):
 
     return df
 
-
+def delete_non_oscar_winners(df, column_name):
+    # Filter rows where 'Oscar Winners' indicates non-winners
+    non_oscar_winners = df[~df[column_name].str.contains('Oscar Winner', na=False)]
+    
+    # Calculate the number of non-Oscar winner rows to delete (20%)
+    num_to_delete = int(len(non_oscar_winners) * 0.21)
+    
+    # Randomly choose non-Oscar winner rows to delete
+    rows_to_delete = non_oscar_winners.sample(n=num_to_delete, random_state=42).index
+    
+    # Drop the chosen rows
+    df = df.drop(rows_to_delete)
+    
+    return df
 
 
 # Main function to execute the entire data processing pipeline
@@ -260,6 +285,17 @@ def main():
 
     #Drop irrelevant Columns
     df = drop_columns(df)
+
+    # Delete 20% of non-Oscar winner rows
+    df = delete_non_oscar_winners(df, 'Oscar Winners')
+
+    # Duplicate all rows that got an Oscar
+    df = duplicate_oscar_winners(df)
+    # Duplicate all rows that got an Oscar
+    df = duplicate_oscar_winners(df)
+    df = duplicate_oscar_winners(df)
+    df = duplicate_oscar_winners(df)
+
 
     #reset index of df
     df.reset_index(drop=True, inplace=True)
@@ -293,6 +329,8 @@ def main():
     
     #Apply one hot encoder to a specified columns ( - Oscar Winners)
     df = onehot_enc_nonOscar(df)
+
+    
 
     save_data(df, file_path)
     print("Excel file updated")
