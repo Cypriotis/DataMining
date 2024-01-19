@@ -14,7 +14,7 @@ features_for_clustering = [
     'Rotten Tomatoes Audience ', 'Metacritic Audience ', 'Average audience ',
     'Audience vs Critics deviance ', 'Domestic gross ($million)',
     'Foreign Gross ($million)', 'Worldwide Gross ($million)', 'Budget ($million)',
-    'one-hot encoding ScriptType', 'one-hot encoding Genre', 'one-hot encoding Oscar Winners'
+    'one-hot encoding Script Type', 'one-hot encoding Genre', 'one-hot encoding Oscar Winners'
 ]
 
 # Select only relevant features for clustering

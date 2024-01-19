@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load the dataset into a DataFrame
-df = pd.read_excel("/home/tofi-machine/Documents/DataMining/DataMining/movies.xlsx")
+df = pd.read_excel("/home/tofi-machine/Documents/DataMining/DataMining/movies_with_vote_average.xlsx")
 
 # Select relevant features for clustering (including 'Year')
 features_for_clustering = [
@@ -39,7 +39,7 @@ plt.ylabel('Inertia')
 plt.show()
 
 # Based on the Elbow Method, choose the optimal number of clusters
-k_optimal = 3  # Adjust based on the plot
+k_optimal = 3 # Adjust based on the plot
 
 # Apply K-Means clustering
 kmeans = KMeans(n_clusters=k_optimal, random_state=42)
@@ -65,10 +65,10 @@ print(cluster_characteristics_oscar)
 sns.set(style="whitegrid")
 plt.figure(figsize=(12, 8))
 
-# Scatter plot for 'Year' vs 'Rotten Tomatoes critics'
+# Scatter plot for 'oscar winners' vs 'Rotten Tomatoes critics'
 plt.subplot(2, 2, 1)
-sns.scatterplot(x='Year', y='Rotten Tomatoes  critics', hue='Cluster_KMeans', data=df, palette='Set1')
-plt.title('Year vs Rotten Tomatoes Critics (Oscar Wins)')
+sns.scatterplot(x='one-hot encoding Oscar Winners', y='Rotten Tomatoes  critics', hue='Cluster_KMeans', data=df, palette='Set1')
+plt.title('one-hot encoding Oscar Winners vs Rotten Tomatoes Critics (Oscar Wins)')
 
 # Scatter plot for 'Year' vs 'Metacritic critics'
 plt.subplot(2, 2, 2)
@@ -79,9 +79,14 @@ plt.title('Year vs Metacritic Critics (Oscar Wins)')
 plt.subplot(2, 2, 3)
 sns.scatterplot(x='Rotten Tomatoes  critics', y='Metacritic  critics', hue='Cluster_KMeans', data=df, palette='Set1')
 plt.title('Rotten Tomatoes Critics vs Metacritic Critics (Oscar Wins)')
-
-# Remove the empty subplot in the last position
-plt.subplot(2, 2, 4).axis('off')
-
 plt.tight_layout()
 plt.show()
+
+# Create a separate, larger plot for 'oscar winners' vs 'vote_average'
+plt.figure(figsize=(15, 40))  # You can adjust the size as needed
+sns.scatterplot(x='one-hot encoding Oscar Winners', y='vote_average', hue='Cluster_KMeans', data=df, palette='Set1')
+plt.title('Oscar Winners vs Vote Average')
+plt.xlabel('One-hot Encoding Oscar Winners')
+plt.ylabel('Vote Average')
+plt.show()
+

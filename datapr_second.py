@@ -41,7 +41,7 @@ def drop_duplicates(df):
         print("No duplicates found in the 'Film' column.")
     return df
 def drop_columns(df):
-    list_of_columns_to_delete  = ['Film', 'Rotten Tomatoes vs Metacritic  deviance', 'Primary Genre', 'Opening Weekend',
+    list_of_columns_to_delete  = ['Rotten Tomatoes vs Metacritic  deviance', 'Primary Genre', 'Opening Weekend',
                                 'Opening weekend ($million)', ' Budget recovered', ' Budget recovered opening weekend',' of Gross earned abroad','Release Date (US)', 'Distributor','Oscar Detail']
     columns_exist = all(col in df.columns for col in list_of_columns_to_delete)
 
