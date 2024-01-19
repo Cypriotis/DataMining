@@ -31,4 +31,4 @@ def find_matching_films(movies_path, movies_metadata_path):
     print(f"Films with their vote average have been saved to 'movies_with_vote_average.csv'")
 
 # Call the function with the file paths
-find_matching_films(movies_path, movies_metadata_path)
+find_matching_films(movies_path, movies_metadata_path)  

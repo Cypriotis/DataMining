@@ -22,7 +22,7 @@ predictions_df = pd.DataFrame({'Predictions': y_pred_new})
 print("Predictions:")
 print(predictions_df)
 
-predictions_df.to_excel('/home/tofi-machine/Documents/DataMining/DataMining/test_predictions.xlsx', index=False)
+predictions_df.to_excel('/home/tofi-machine/Documents/DataMining/DataMining/results_it22131.xlsx', index=False)
 
 # Count the occurrences of '1' in the 'Predictions' column
 count_ones = predictions_df['Predictions'].sum()
